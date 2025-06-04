@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Wikipedia LLM Scraper with S3 Screenshots
+
+Globals:
+  Function:
+    Timeout: 300
+    MemorySize: 1024
+    Runtime: nodejs20.x
+    Architectures:
+      - x86_64
+    Environment:
+      Variables:
+        S3_BUCKET_NAME: !Ref ScreenshotsBucket
+
+Resources:
+  ScreenshotsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'llm-wiki-screenshots-${AWS::AccountId}'
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteOldScreenshots
+            Status: Enabled
+            ExpirationInDays: 30
+            Prefix: 'screenshots/'
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  WikipediaScraperFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: llm-wikipedia-scraper
+      Description: Scrapes Wikipedia LLM page and uploads screenshots to S3
+      CodeUri: browser-function/
+      Handler: app.lambdaHandler
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:PutObject
+                - s3:GetObject
+                - s3:ListBucket
+              Resource:
+                - !Sub 'arn:aws:s3:::${ScreenshotsBucket}'
+                - !Sub 'arn:aws:s3:::${ScreenshotsBucket}/*'
+        - Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource: 'arn:aws:logs:*:*:*'
+      Events:
+        ScheduleEvent:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 day)
+            Enabled: true
+
+Outputs:
+  ScreenshotsBucketName:
+    Description: Name of the S3 bucket for screenshots
+    Value: !Ref ScreenshotsBucket
+
+  WikipediaScraperFunction:
+    Description: Wikipedia Scraper Lambda Function ARN
+    Value: !GetAtt WikipediaScraperFunction.Arn
+
+  WikipediaScraperFunctionRole:
+    Description: IAM Role used by the scraper function
+    Value: !GetAtt WikipediaScraperFunctionRole.Arn
