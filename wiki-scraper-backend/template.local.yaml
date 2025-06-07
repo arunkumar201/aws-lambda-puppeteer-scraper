@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Local Development Stack
+
+Environment:
+  Variables:
+    NODE_ENV: local
+    QUEUE_URL: "http://localhost:4566/000000000000/scraper-queue"
+    AWS_ACCESS_KEY_ID: "test"
+    AWS_SECRET_ACCESS_KEY: "test"
+    AWS_DEFAULT_REGION: "ap-south-1"
+
+Resources:
+  ScraperQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: scraper-queue
+
+  ScraperApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: dev
+      Auth:
+        ApiKeyRequired: false
+      Cors:
+        AllowMethods: "'*'"
+        AllowHeaders: "'*'"
+        AllowOrigin: "'*'"
+
+  ApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: wiki-scraper-api
+      CodeUri: ./dist  
+      Handler: api.handler  
+      Runtime: nodejs18.x
+      MemorySize: 256
+      Timeout: 30
+      Environment:
+        Variables:
+          NODE_ENV: local
+          QUEUE_URL: !GetAtt ScraperQueue.QueueUrl
+          AWS_REGION: ap-south-1
+      Events:
+        ScrapeApi:
+          Type: Api
+          Properties:
+            RestApiId: !Ref ScraperApi
+            Path: /scrape
+            Method: post
+            Auth:
+              ApiKeyRequired: false
+
+Outputs:
+  ApiUrl:
+    Description: "API URL"
+    Value: !Sub "http://localhost:3000"
+  QueueUrl:
+    Description: "SQS Queue URL"
+    Value: !GetAtt ScraperQueue.QueueUrl

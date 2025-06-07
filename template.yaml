@@ -1,76 +1,122 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: >
-  Wikipedia LLM Scraper with S3 Screenshots
+Description: Wiki Scraper API with S3 and SQS
 
-Globals:
-  Function:
-    Timeout: 300
-    MemorySize: 1024
-    Runtime: nodejs20.x
-    Architectures:
-      - x86_64
-    Environment:
-      Variables:
-        S3_BUCKET_NAME: !Ref ScreenshotsBucket
+Parameters:
+  EnvironmentName:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+    Description: Deployment environment
 
 Resources:
-  ScreenshotsBucket:
+  ScraperBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub 'llm-wiki-screenshots-${AWS::AccountId}'
+      BucketName: !Sub wiki-scraper-${EnvironmentName}-${AWS::AccountId}
+      VersioningConfiguration:
+        Status: Enabled
       LifecycleConfiguration:
         Rules:
-          - Id: DeleteOldScreenshots
+          - Id: CleanupOldVersions
             Status: Enabled
-            ExpirationInDays: 30
-            Prefix: 'screenshots/'
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
+            ExpiredObjectDeleteMarker: true
+            NoncurrentVersionExpirationInDays: 30
 
-  WikipediaScraperFunction:
+  ScraperQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub wiki-scraper-queue-${EnvironmentName}
+      VisibilityTimeout: 900  # 15 minutes
+      MessageRetentionPeriod: 1209600  # 14 days
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt ScraperDLQ.Arn
+        maxReceiveCount: 3
+
+  ScraperDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub wiki-scraper-dlq-${EnvironmentName}
+      MessageRetentionPeriod: 1209600  # 14 days
+
+  ScraperExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: [lambda.amazonaws.com]
+            Action: ['sts:AssumeRole']
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: ScraperPermissions
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'sqs:SendMessage'
+                  - 'sqs:ReceiveMessage'
+                  - 'sqs:DeleteMessage'
+                  - 'sqs:GetQueueAttributes'
+                Resource: !GetAtt ScraperQueue.Arn
+              - Effect: Allow
+                Action:
+                  - 's3:PutObject'
+                  - 's3:GetObject'
+                  - 's3:DeleteObject'
+                Resource: !Sub '${ScraperBucket.Arn}/*'
+
+  ScraperFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: llm-wikipedia-scraper
-      Description: Scrapes Wikipedia LLM page and uploads screenshots to S3
-      CodeUri: browser-function/
-      Handler: app.lambdaHandler
-      Policies:
-        - Statement:
-            - Effect: Allow
-              Action:
-                - s3:PutObject
-                - s3:GetObject
-                - s3:ListBucket
-              Resource:
-                - !Sub 'arn:aws:s3:::${ScreenshotsBucket}'
-                - !Sub 'arn:aws:s3:::${ScreenshotsBucket}/*'
-        - Statement:
-            - Effect: Allow
-              Action:
-                - logs:CreateLogGroup
-                - logs:CreateLogStream
-                - logs:PutLogEvents
-              Resource: 'arn:aws:logs:*:*:*'
+      FunctionName: !Sub wiki-scraper-${EnvironmentName}
+      CodeUri: ./
+      Handler: dist/api.handler
+      Runtime: nodejs18.x
+      MemorySize: 1024
+      Timeout: 300  # 5 minutes
+      Role: !GetAtt ScraperExecutionRole.Arn
+      Environment:
+        Variables:
+          QUEUE_URL: !Ref ScraperQueue
+          BUCKET_NAME: !Ref ScraperBucket
+          NODE_ENV: !Ref EnvironmentName
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+      Layers:
+        - !Sub 'arn:aws:lambda:${AWS::Region}:764866452798:layer:chrome-aws-lambda:31'
       Events:
-        ScheduleEvent:
-          Type: Schedule
+        ApiEvent:
+          Type: Api
           Properties:
-            Schedule: rate(1 day)
-            Enabled: true
+            Path: /scrape
+            Method: post
+            RestApiId: !Ref ScraperApi
+            Auth:
+              ApiKeyRequired: false
+
+  ScraperApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: !Ref EnvironmentName
+      Cors:
+        AllowMethods: "'POST, OPTIONS'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: "'*'"
 
 Outputs:
-  ScreenshotsBucketName:
-    Description: Name of the S3 bucket for screenshots
-    Value: !Ref ScreenshotsBucket
-
-  WikipediaScraperFunction:
-    Description: Wikipedia Scraper Lambda Function ARN
-    Value: !GetAtt WikipediaScraperFunction.Arn
-
-  WikipediaScraperFunctionRole:
-    Description: IAM Role used by the scraper function
-    Value: !GetAtt WikipediaScraperFunctionRole.Arn
+  ScraperApiUrl:
+    Description: "API Gateway endpoint URL"
+    Value: !Sub "https://${ScraperApi}.execute-api.${AWS::Region}.amazonaws.com/${EnvironmentName}/scrape"
+  ScraperQueueUrl:
+    Description: "SQS Queue URL"
+    Value: !Ref ScraperQueue
+  ScraperBucketName:
+    Description: "S3 Bucket Name"
+    Value: !Ref ScraperBucket
+  ScraperFunctionName:
+    Description: "Lambda Function Name"
+    Value: !Ref ScraperFunction

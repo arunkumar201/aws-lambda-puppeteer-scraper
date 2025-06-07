@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/scrape",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"url\":\"https://en.wikipedia.org/wiki/Node.js\"}"
+}

@@ -1,0 +1,228 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Wikipedia Scraper Backend
+  A serverless application for scraping Wikipedia pages using AWS Lambda, SQS, and S3
+
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - staging
+      - prod
+    Description: Deployment environment (dev, staging, prod)
+
+Globals:
+  Function:
+    Timeout: 300
+    MemorySize: 1024
+    Runtime: nodejs18.x
+    Architectures:
+      - x86_64
+    Environment:
+      Variables:
+        NODE_ENV: !Ref Environment
+        S3_BUCKET_NAME: !Ref ScreenshotsBucket
+        LOG_LEVEL: !If [IsProd, 'info', 'debug']
+        # AWS_REGION is automatically available in Lambda environment
+
+Conditions:
+  IsProd: !Equals [!Ref Environment, 'prod']
+
+Resources:
+  # S3 Bucket for storing screenshots
+  ScreenshotsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${AWS::AccountId}-${AWS::Region}-wiki-scraper-screenshots"
+      AccessControl: Private
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteOldScreenshots
+            Status: Enabled
+            ExpirationInDays: 30
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders: ["*"]
+            AllowedMethods: [GET, PUT, POST, DELETE, HEAD]
+            AllowedOrigins: ["*"]
+            MaxAge: 3000
+
+  # IAM Role for Lambda
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: S3AccessPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:GetObject
+                  - s3:DeleteObject
+                Resource: !Sub "arn:aws:s3:::${ScreenshotsBucket}/*"
+
+  # SQS Queue for processing requests
+  ScraperQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub "wiki-scraper-queue-${Environment}"
+      VisibilityTimeout: 300
+      MessageRetentionPeriod: 1209600  # 14 days in seconds
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt ScraperDLQ.Arn
+        maxReceiveCount: 3
+
+  # Dead Letter Queue for failed messages
+  ScraperDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub "wiki-scraper-dlq-${Environment}"
+      MessageRetentionPeriod: 1209600  # 14 days in seconds
+
+  # API Gateway
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: !Ref Environment
+      Cors:
+        AllowMethods: "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: "'*'"
+        # AllowCredentials cannot be true when AllowOrigin is '*'
+        # AllowCredentials: true
+
+  # API Handler Lambda Function
+  ApiHandlerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "wiki-scraper-api-${Environment}"
+      Description: Handles API Gateway requests and queues scraping tasks
+      CodeUri: dist/
+      Handler: api.handler
+      Runtime: nodejs18.x
+      MemorySize: 1024
+      Layers:
+        - !Ref DependenciesLayer
+      Timeout: 30
+      Environment:
+        Variables:
+          QUEUE_URL: !Ref ScraperQueue
+          NODE_ENV: !Ref Environment
+          LOG_LEVEL: !If [IsProd, 'info', 'debug']
+          # AWS_REGION is automatically available in Lambda environment
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+      Policies:
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt ScraperQueue.QueueName
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            RestApiId: !Ref ApiGatewayApi
+            Path: /scrape
+            Method: POST
+
+  # Dependencies Layer
+  DependenciesLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: !Sub "wiki-scraper-deps-${Environment}"
+      Description: Dependencies for wiki-scraper
+      ContentUri: layer/
+      CompatibleRuntimes:
+        - nodejs18.x
+      RetentionPolicy: Retain
+
+  # Scraper Worker Lambda Function
+  ScraperWorkerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "wiki-scraper-worker-${Environment}"
+      Description: Processes scraping tasks from SQS
+      CodeUri: dist/
+      Handler: worker.handler
+      Runtime: nodejs18.x
+      MemorySize: 2048  # Increased memory for Puppeteer
+      Timeout: 300
+      Environment:
+        Variables:
+          S3_BUCKET_NAME: !Ref ScreenshotsBucket
+          NODE_ENV: !Ref Environment
+          LOG_LEVEL: !If [IsProd, 'info', 'debug']
+          # AWS_REGION is automatically available in Lambda environment
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+      Events:
+        SQSQueueEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt ScraperQueue.Arn
+            BatchSize: 1  # Process one message at a time
+      Layers:
+        - !Ref DependenciesLayer
+        - !Sub "arn:aws:lambda:${AWS::Region}:764866452798:layer:chrome-aws-lambda:31"  # Optimized Chromium layer
+
+
+  # IAM Policy for SQS Access
+  SQSPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "wiki-scraper-sqs-policy-${Environment}"
+      Roles:
+        - !Ref LambdaExecutionRole
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - sqs:SendMessage
+              - sqs:ReceiveMessage
+              - sqs:DeleteMessage
+              - sqs:GetQueueAttributes
+            Resource: !GetAtt ScraperQueue.Arn
+          - Effect: Allow
+            Action:
+              - sqs:ChangeMessageVisibility
+            Resource: !GetAtt ScraperQueue.Arn
+
+Outputs:
+  ApiUrl:
+    Description: "API Gateway endpoint URL"
+    Value: !Sub "https://${ApiGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/${Environment}"
+  
+  ScraperQueueUrl:
+    Description: "URL of the SQS Queue"
+    Value: !Ref ScraperQueue
+    
+  ScraperQueueArn:
+    Description: "ARN of the SQS Queue"
+    Value: !GetAtt ScraperQueue.Arn
+    
+  ScreenshotsBucketName:
+    Description: "Name of the S3 bucket for screenshots"
+    Value: !Ref ScreenshotsBucket
+    
+  ApiHandlerFunctionName:
+    Description: "API Handler Lambda Function Name"
+    Value: !Ref ApiHandlerFunction
+    
+  ScraperWorkerFunctionName:
+    Description: "Scraper Worker Lambda Function Name"
+    Value: !Ref ScraperWorkerFunction
