@@ -24,7 +24,6 @@ Globals:
         NODE_ENV: !Ref Environment
         S3_BUCKET_NAME: !Ref ScreenshotsBucket
         LOG_LEVEL: !If [IsProd, 'info', 'debug']
-        # AWS_REGION is automatically available in Lambda environment
 
 Conditions:
   IsProd: !Equals [!Ref Environment, 'prod']
@@ -163,6 +162,9 @@ Resources:
         AllowOrigin: "'*'"
         # AllowCredentials cannot be true when AllowOrigin is '*'
         # AllowCredentials: true
+        Throttle:
+          BurstLimit: 20
+          RateLimit: 10
 
   # API Handler Lambda Function
   ApiHandlerFunction:
@@ -223,8 +225,6 @@ Resources:
             Queue: !GetAtt ScraperQueue.Arn
             BatchSize: 1
             Enabled: true
-      # Layers:
-      #   - !Sub "arn:aws:lambda:${AWS::Region}:764866452798:layer:chromium:123"
 
 Outputs:
   ApiUrl:

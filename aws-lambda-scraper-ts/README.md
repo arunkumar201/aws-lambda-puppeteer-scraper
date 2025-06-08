@@ -100,6 +100,75 @@ pnpm build
 - `pnpm local:api` - Start local API Gateway for Lambda development using SAM
 - `pnpm local:invoke` - Invoke a local Lambda function with a test event using SAM
 
+## AWS Architecture Diagram
+
+Here is an overview of the AWS architecture for this application:
+
+```mermaid
+flowchart LR
+ subgraph subGraph0["IAM Permissions"]
+    direction TB
+        I["LambdaExecutionRole"]
+  end
+ subgraph subGraph1["Lambda & Queues"]
+    direction TB
+        C["ApiHandlerFunction<br><b>Lambda Function</b><br><small>Receives request, validates payload</small>"]
+        D["ScraperQueue<br><b>SQS Queue</b><br><small>Buffers scraping jobs</small>"]
+        E["ScraperWorkerFunction<br><b>Lambda Worker</b><br><small>Runs browser scraper logic</small>"]
+        G["ScraperResultsQueue<br><b>SQS Queue</b><br><small>Holds metadata/output for consumers</small>"]
+        H["ScraperDLQ<br><b>Dead Letter Queue</b><br><small>Captures failed scraping jobs for inspection or reprocessing</small>"]
+  end
+ subgraph subGraph2["S3 Storage"]
+    direction TB
+        F["ScreenshotsBucket<br><b>S3 Bucket</b><br><small>Stores images/screenshots</small>"]
+        J["ScreenshotsBucketPolicy<br><b>S3 Bucket Policy</b>"]
+  end
+ subgraph subGraph3["🔁 Description Flow (How it Works)"]
+    direction TB
+        desc1["1️⃣ Client sends a POST /scrape request to API Gateway."]
+        desc2["2️⃣ API Handler Lambda validates and enqueues the job to ScraperQueue (SQS)."]
+        desc3["3️⃣ Scraper Worker Lambda is triggered by SQS and performs the scraping."]
+        desc4["4️⃣ Scraped results are saved to S3 (screenshots) and SQS (metadata)."]
+        desc5["5️⃣ If scraping fails repeatedly, the job is moved to the Dead Letter Queue (ScraperDLQ) for later analysis or reprocessing."]
+  end
+    A["Client<br><small>Web, Mobile, or SDK</small>"] --> B["API Gateway<br><code>POST /scrape</code><br><small>Public HTTP Entry Point</small>"]
+    B --> C
+    C --> D
+    D -- Triggers on message arrival --> E
+    E --> F & G
+    F -- Access controlled by --> J
+    D -- After max retries or error --> H
+    I -- Used by --> C & E
+    I -- Grants write access to --> D & G
+    I -- Grants read/write access to --> F
+    A ~~~ I
+    F ~~~ G
+    desc1 --> desc2
+    desc2 --> desc3
+    desc3 --> desc4
+    desc4 --> desc5
+    D --> n1["Untitled Node"]
+
+    style I fill:#d3d3d3,stroke:#333,stroke-width:2px
+    style C fill:#90ee90,stroke:#333,stroke-width:2px
+    style D fill:#f0e68c,stroke:#333,stroke-width:2px
+    style E fill:#90ee90,stroke:#333,stroke-width:2px
+    style G fill:#f0e68c,stroke:#333,stroke-width:2px
+    style H fill:#ff6347,stroke:#333,stroke-width:2px
+    style F fill:#ffa07a,stroke:#333,stroke-width:2px
+    style J fill:#d3d3d3,stroke:#333,stroke-width:2px
+    style A fill:#ffffff,stroke:#333,stroke-width:2px
+    style B fill:#add8e6,stroke:#333,stroke-width:2px
+```
+
+## Configurable Scraping Enhancements
+
+This application is designed with extensibility in mind to support advanced web scraping needs. Future enhancements can be easily integrated and configured to handle more complex scenarios:
+
+-   **Proxy Integration:** Configure the Puppeteer scraper to route requests through various proxy services. This helps in rotating IP addresses, bypassing geo-restrictions, and avoiding IP bans.
+-   **Bot Prevention Bypasses:** Implement strategies to overcome bot detection mechanisms, such as adjusting browser fingerprints, handling reCAPTCHA, and simulating human-like browsing patterns.
+-   **CAPTCHA Solvers:** Integrate with third-party CAPTCHA solving services to automate the resolution of CAPTCHAs encountered during scraping.
+
 ## Project Structure
 
 ```
