@@ -11,13 +11,10 @@
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" --fix",
     "build": "tsc",
-    "invoke:local": "sam local invoke --event events/event.json",
-    "test:local": "sam local start-api --env-vars env.json",
     "local:api": "DOCKER_HOST=unix://$HOME/.docker/run/docker.sock sam local start-api -t template.local.yaml --skip-pull-image --warm-containers LAZY --port 3000 --docker-network host",
-    "local:invoke": "DOCKER_HOST=unix://$HOME/.docker/run/docker.sock sam local invoke -t template.local.yaml -e events/event.json --docker-network host",
+    "local:invoke": "DOCKER_HOST=unix://$HOME/.docker/run/docker.sock sam local invoke -t template.local.yaml -e event.json --docker-network host",
     "dev": "nodemon src/index.ts",
-    "start": "NODE_ENV=production node dist/index.js",
-    "start:prod": "NODE_ENV=production node dist/index.js"
+    "start": "NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.540.0",

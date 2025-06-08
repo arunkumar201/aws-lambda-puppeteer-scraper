@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import puppeteer, { Browser } from 'puppeteer-core';
 import chromium from '@sparticuz/chromium';
 
-import { GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { ScrapeInput } from '../validations';
 import ApiError from '../utils/ApiError';
@@ -40,24 +40,20 @@ async function uploadToS3orLocal(
       const command = new PutObjectCommand(params);
       await s3.send(command);
 
-      // Generate a pre-signed URL for the uploaded file
       const url = await getSignedUrl(s3, command, { expiresIn: config.aws.s3.signedUrlExpiry });
-      return url.split('?')[0]; // Return the base URL without query parameters
+      return url.split('?')[0];
     } catch (error) {
       logger.error('Error uploading to S3:', error);
       throw new ApiError(500, 'Failed to upload file to S3');
     }
   } else {
     try {
-      // Ensure the screenshots directory exists
       const screenshotsDir = path.join(process.cwd(), 'public', 'screenshots');
       await fs.promises.mkdir(screenshotsDir, { recursive: true });
 
-      // Create a safe filename from the key
       const safeKey = key.replace(/[^a-z0-9.-]/gi, '_').toLowerCase();
       const filePath = path.join(screenshotsDir, safeKey);
 
-      // Write the file
       await fs.promises.writeFile(filePath, buffer);
 
       // Return the relative URL path
