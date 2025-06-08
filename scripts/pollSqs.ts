@@ -1,4 +1,3 @@
-// pollSqs.ts
 import { SQSClient, ReceiveMessageCommand, DeleteMessageCommand } from '@aws-sdk/client-sqs';
 import fs from 'fs/promises';
 import path from 'path';

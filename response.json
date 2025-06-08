@@ -1,4 +1,0 @@
-{
-  "statusCode": 500,
-  "body": "{\"error\":\"Failed to scrape LLM information\",\"details\":\"GetObjectCommand is not defined\"}"
-}
