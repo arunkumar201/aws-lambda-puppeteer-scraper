@@ -16,11 +16,15 @@ import { ScrapeBatchRequestSchema, ScrapeBatchResponse, ScrapeAction } from './t
 import { SCRAPER_MAP, ScrapeActionType } from './scraper/scraper.constants';
 import { BrowserFactory } from './scraper/browser-factory';
 import { Browser } from 'puppeteer-core';
+import path from 'path';
 
 const app: Application = express();
 
 // Set security HTTP headers
 app.use(helmet());
+
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Enable CORS
 app.use(cors());
