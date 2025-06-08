@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/scrape",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"site_type\":\"wikipedia\",\"user_id\":\"arun1234\",\"url\":\"https://nextjs.org/docs/app/building-your-application/routing/middleware\",\"metadata\":{\"source\":\"api-gateway\",\"priority\":\"high\"}}"
+}
