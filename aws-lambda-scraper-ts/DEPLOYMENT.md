@@ -14,8 +14,8 @@ This guide provides step-by-step instructions for deploying the Wikipedia Scrape
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/wiki-scraper-backend.git
-   cd wiki-scraper-backend
+   git clone https://github.com/arunkumar201/aws-lambda-puppeteer.git
+   cd aws-lambda-puppeteer/wiki-scraper-backend
    ```
 
 2. Install dependencies:
@@ -23,24 +23,20 @@ This guide provides step-by-step instructions for deploying the Wikipedia Scrape
    pnpm install
    ```
 
-3. Create a `.env` file with the following variables:
-   ```env
-   NODE_ENV=production
-   AWS_REGION=your-aws-region
-   S3_BUCKET_NAME=your-s3-bucket-name
-   ```
+3. Create a `.env` file with the from `.env.example` file
+
 
 ## Building the Application
 
-1. Build the TypeScript code:
+1. Build the Lambda deployment package:
    ```bash
-   npm run build:lambda
+   pnpm run lambda:build
    ```
 
-   This will:
-   - Clean the `dist` directory
-   - Compile TypeScript to JavaScript
-   - Prune development dependencies
+   This script (`deploy.sh`) will:
+   - Clean the `dist` directory.
+   - Compile TypeScript to JavaScript.
+   - Install production dependencies in `dist/`.
 
 ## Deploying with AWS SAM
 
@@ -49,11 +45,11 @@ This guide provides step-by-step instructions for deploying the Wikipedia Scrape
 For the first deployment, use the guided deployment:
 
 ```bash
-npm run deploy:guided
+pnpm run lambda:deploy:guided
 ```
 
 Follow the interactive prompts to provide:
-- Stack Name: `wiki-scraper-backend`
+- Stack Name: `aws-lambda-puppeteer-scraper`
 - AWS Region: (your preferred region)
 - Environment: `dev`, `staging`, or `prod`
 - Confirm changes before deploy: `y`
@@ -66,7 +62,7 @@ Follow the interactive prompts to provide:
 For subsequent deployments, you can use:
 
 ```bash
-npm run deploy
+pnpm run lambda:deploy
 ```
 
 This will use the configuration from `samconfig.toml`.
@@ -75,11 +71,24 @@ This will use the configuration from `samconfig.toml`.
 
 1. Get the API Gateway URL from the CloudFormation outputs
 2. Send a POST request to the `/scrape` endpoint:
+   
+   **Single Job Request Example:**
    ```bash
    curl -X POST \
      https://YOUR_API_ID.execute-api.REGION.amazonaws.com/prod/scrape \
      -H 'Content-Type: application/json' \
-     -d '{"url":"https://en.wikipedia.org/wiki/Node.js"}'
+     -d '{ "site_type": "wikipedia", "user_id": "test_user", "url": "https://en.wikipedia.org/wiki/Node.js", "metadata": { "source": "api-gateway", "priority": "high" } }'
+   ```
+
+   **Batch Job Request Example:**
+   ```bash
+   curl -X POST \
+     https://YOUR_API_ID.execute-api.REGION.amazonaws.com/prod/scrape \
+     -H 'Content-Type: application/json' \
+     -d '[
+       { "site_type": "wikipedia", "user_id": "user1", "url": "https://en.wikipedia.org/wiki/Python", "metadata": { "source": "api-gateway", "priority": "high" } },
+       { "site_type": "news", "user_id": "user2", "url": "https://www.cnn.com/", "metadata": { "source": "api-gateway", "priority": "low" } }
+     ]'
    ```
 
 ## Monitoring
@@ -93,7 +102,7 @@ This will use the configuration from `samconfig.toml`.
 To delete the stack and all resources:
 
 ```bash
-aws cloudformation delete-stack --stack-name wiki-scraper-backend
+aws cloudformation delete-stack --stack-name aws-lambda-puppeteer-scraper
 ```
 
 ## Troubleshooting

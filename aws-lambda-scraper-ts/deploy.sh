@@ -39,6 +39,3 @@ cd ..
 
 # Step 2: Build the SAM application
 sam build --no-cached
-# Step 3: Deploy the SAM application (guided for first-time setup)
-sam deploy --guided
- 

@@ -35,6 +35,9 @@ dependencies:
   twitter-api-v2:
     specifier: ^1.18.2
     version: 1.23.2
+  uuid:
+    specifier: ^11.1.0
+    version: 11.1.0
 
 devDependencies:
   '@types/puppeteer':
@@ -3023,6 +3026,11 @@ packages:
       is-generator-function: 1.1.0
       is-typed-array: 1.1.15
       which-typed-array: 1.1.19
+    dev: false
+
+  /uuid@11.1.0:
+    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+    hasBin: true
     dev: false
 
   /uuid@8.0.0:

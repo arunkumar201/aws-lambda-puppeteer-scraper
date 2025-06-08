@@ -43,7 +43,8 @@
     "esbuild": "^0.25.5",
     "puppeteer": "^24.10.0",
     "puppeteer-core": "^22.6.5",
-    "twitter-api-v2": "^1.18.2"
+    "twitter-api-v2": "^1.18.2",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@types/puppeteer": "^7.0.4",

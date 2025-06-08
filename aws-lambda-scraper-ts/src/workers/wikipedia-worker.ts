@@ -8,46 +8,39 @@ const sqs = new SQSClient({ region: process.env.AWS_REGION || 'ap-south-1' });
 const RESULTS_QUEUE_URL = process.env.RESULTS_QUEUE_URL || 'aws-lambda-result-queue';
 
 export class WikipediaWorkerProcessor {
-  public async processJob(browser: Browser, rawJob: ScrapeAction): Promise<ScrapeResult | null> {
+  public async processJob(browser: Browser, job: ScrapeAction): Promise<ScrapeResult | null> {
     try {
-      const { action, payload } = rawJob;
+      const { site_type } = job;
 
-      if (action !== 'wikipedia') {
-        logger.warn(`WikipediaWorkerProcessor received non-wikipedia job action: ${action}`);
-        // eslint-disable-next-line no-console
-        console.log('Invalid job action for WikipediaWorkerProcessor');
-        return null;
-      }
-
-      const parsedPayload = WikipediaJobSchema.safeParse(payload);
+      const parsedPayload = WikipediaJobSchema.safeParse(job);
       if (!parsedPayload.success) {
         logger.error(`Invalid payload for wikipedia job:`, {
           errors: parsedPayload.error.errors,
-          recordBody: rawJob,
+          recordBody: job,
         });
         throw new Error('Invalid payload for Wikipedia job');
       }
 
-      const job = parsedPayload.data;
+      const wikipediaJob = parsedPayload.data;
       const scraper = new WikipediaScraper();
 
-      logger.info(`Processing wikipedia job_id: ${job.job_id || 'N/A'}`);
+      logger.info(`Processing wikipedia job_id: ${wikipediaJob.job_id || 'N/A'}`);
 
-      const scrapeResult: ScrapeResult = await scraper.scrape(browser, job);
+      const scrapeResult: ScrapeResult = await scraper.scrape(browser, wikipediaJob);
 
       await sqs.send(
         new SendMessageCommand({
           QueueUrl: RESULTS_QUEUE_URL,
           MessageBody: JSON.stringify({
-            job_id: job.job_id,
-            action,
+            job_id: wikipediaJob.job_id,
+            action: site_type,
             result: scrapeResult,
           }),
         })
       );
 
       logger.info(
-        `Scrape result sent to results queue for wikipedia job_id: ${job.job_id || 'N/A'}`
+        `Scrape result sent to results queue for wikipedia job_id: ${wikipediaJob.job_id || 'N/A'}`
       );
       return scrapeResult;
     } catch (error: unknown) {
@@ -57,7 +50,7 @@ export class WikipediaWorkerProcessor {
       logger.error('Error processing Wikipedia job in WikipediaWorkerProcessor:', {
         error: errorMessage,
         stack: errorStack,
-        rawJob,
+        rawJob: job,
       });
       throw new Error(`WikipediaWorkerProcessor failed: ${errorMessage}`);
     }

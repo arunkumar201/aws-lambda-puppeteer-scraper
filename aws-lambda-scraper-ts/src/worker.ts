@@ -1,20 +1,17 @@
 import { SQSEvent, SQSHandler } from 'aws-lambda';
 import { BrowserFactory } from './scraper/browser-factory';
-import { WikipediaJobSchema, NewsJobSchema, ScrapeAction, ScrapeResult } from './types/job.types';
+import { ScrapeAction, ScrapeResult, ScrapeActionSchema } from './types/job.types';
 import { logger } from './utils/logger';
 import { Browser } from 'puppeteer-core';
-import { z } from 'zod';
 import { WikipediaWorkerProcessor } from './workers/wikipedia-worker';
 import { NewsWorkerProcessor } from './workers/news-worker';
 
-const scraperMap: Record<ScrapeAction['action'], { processor: unknown; schema: unknown }> = {
+const scraperMap: Record<ScrapeAction['site_type'], { processor: unknown }> = {
   wikipedia: {
     processor: WikipediaWorkerProcessor,
-    schema: WikipediaJobSchema,
   },
   news: {
     processor: NewsWorkerProcessor,
-    schema: NewsJobSchema,
   },
 };
 
@@ -36,34 +33,32 @@ export const handler: SQSHandler = async (event: SQSEvent) => {
     for (const record of event.Records) {
       try {
         const rawBody = JSON.parse(record.body);
-        const { action, payload } = rawBody as ScrapeAction;
+        const parsedPayload = ScrapeActionSchema.safeParse(rawBody);
 
-        const scraperEntry = scraperMap[action];
-        if (!scraperEntry) {
-          logger.warn(`Unknown action type: ${action}`, { recordBody: rawBody });
-          continue;
-        }
-
-        const schema = scraperEntry.schema as z.ZodType;
-        const parsedPayload = schema.safeParse(payload);
         if (!parsedPayload.success) {
-          logger.error(`Invalid payload for action ${action}:`, {
+          logger.error(`Invalid payload for SQS record:`, {
             errors: parsedPayload.error.errors,
             recordBody: rawBody,
           });
           continue; // Skip this record
         }
 
+        const { site_type, job_id } = parsedPayload.data;
+
+        const scraperEntry = scraperMap[site_type];
+        if (!scraperEntry) {
+          logger.warn(`Unknown site_type received: ${site_type}`, { recordBody: rawBody });
+          continue;
+        }
+
         const WorkerProcessorClass = scraperEntry.processor as new () => {
-          processJob: (browser: Browser, rawJob: ScrapeAction) => Promise<ScrapeResult>;
+          processJob: (browser: Browser, job: ScrapeAction) => Promise<ScrapeResult>;
         };
         const workerProcessor = new WorkerProcessorClass();
 
-        logger.info(
-          `Processing job for action: ${action}, job_id: ${rawBody.payload.job_id || 'N/A'}`
-        );
+        logger.info(`Processing job for site_type: ${site_type}, job_id: ${job_id || 'N/A'}`);
 
-        await workerProcessor.processJob(browser, rawBody);
+        await workerProcessor.processJob(browser, parsedPayload.data);
       } catch (innerError) {
         logger.error('Error processing single SQS record:', {
           error: innerError instanceof Error ? innerError.message : innerError,
