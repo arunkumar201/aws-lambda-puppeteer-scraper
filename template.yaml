@@ -1,74 +1,21 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Wiki Scraper API with S3 and SQS
+Description: Wiki Scraper API with Puppeteer
 
 Parameters:
   EnvironmentName:
     Type: String
-    Default: prod
+    Default: dev
     AllowedValues: [dev, staging, prod]
-    Description: Deployment environment
+    Description: Environment name
 
 Resources:
-  ScraperBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: !Sub wiki-scraper-${EnvironmentName}-${AWS::AccountId}
-      VersioningConfiguration:
-        Status: Enabled
-      LifecycleConfiguration:
-        Rules:
-          - Id: CleanupOldVersions
-            Status: Enabled
-            ExpiredObjectDeleteMarker: true
-            NoncurrentVersionExpirationInDays: 30
-
   ScraperQueue:
     Type: AWS::SQS::Queue
     Properties:
       QueueName: !Sub wiki-scraper-queue-${EnvironmentName}
-      VisibilityTimeout: 900  # 15 minutes
-      MessageRetentionPeriod: 1209600  # 14 days
-      RedrivePolicy:
-        deadLetterTargetArn: !GetAtt ScraperDLQ.Arn
-        maxReceiveCount: 3
-
-  ScraperDLQ:
-    Type: AWS::SQS::Queue
-    Properties:
-      QueueName: !Sub wiki-scraper-dlq-${EnvironmentName}
-      MessageRetentionPeriod: 1209600  # 14 days
-
-  ScraperExecutionRole:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: [lambda.amazonaws.com]
-            Action: ['sts:AssumeRole']
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-      Policies:
-        - PolicyName: ScraperPermissions
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action:
-                  - 'sqs:SendMessage'
-                  - 'sqs:ReceiveMessage'
-                  - 'sqs:DeleteMessage'
-                  - 'sqs:GetQueueAttributes'
-                Resource: !GetAtt ScraperQueue.Arn
-              - Effect: Allow
-                Action:
-                  - 's3:PutObject'
-                  - 's3:GetObject'
-                  - 's3:DeleteObject'
-                Resource: !Sub '${ScraperBucket.Arn}/*'
+      VisibilityTimeout: 300
+      MessageRetentionPeriod: 1209600
 
   ScraperFunction:
     Type: AWS::Serverless::Function
@@ -78,14 +25,13 @@ Resources:
       Handler: dist/api.handler
       Runtime: nodejs18.x
       MemorySize: 1024
-      Timeout: 300  # 5 minutes
-      Role: !GetAtt ScraperExecutionRole.Arn
+      Timeout: 300
       Environment:
         Variables:
-          QUEUE_URL: !Ref ScraperQueue
-          BUCKET_NAME: !Ref ScraperBucket
           NODE_ENV: !Ref EnvironmentName
-          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+          QUEUE_URL: !Ref ScraperQueue
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+          CHROME_BIN: /opt/chromium/headless_shell
       Layers:
         - !Sub 'arn:aws:lambda:${AWS::Region}:764866452798:layer:chrome-aws-lambda:31'
       Events:
@@ -94,29 +40,26 @@ Resources:
           Properties:
             Path: /scrape
             Method: post
-            RestApiId: !Ref ScraperApi
-            Auth:
-              ApiKeyRequired: false
+      Policies:
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt ScraperQueue.QueueName
 
   ScraperApi:
-    Type: AWS::Serverless::Api
+    Type: AWS::ApiGateway::RestApi
     Properties:
-      StageName: !Ref EnvironmentName
-      Cors:
-        AllowMethods: "'POST, OPTIONS'"
-        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-        AllowOrigin: "'*'"
+      Name: !Sub wiki-scraper-api-${EnvironmentName}
+      Description: API Gateway for Wiki Scraper
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
 
 Outputs:
-  ScraperApiUrl:
+  ApiUrl:
     Description: "API Gateway endpoint URL"
-    Value: !Sub "https://${ScraperApi}.execute-api.${AWS::Region}.amazonaws.com/${EnvironmentName}/scrape"
-  ScraperQueueUrl:
+    Value: !Sub "https://${ScraperApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/scrape"
+  QueueUrl:
     Description: "SQS Queue URL"
     Value: !Ref ScraperQueue
-  ScraperBucketName:
-    Description: "S3 Bucket Name"
-    Value: !Ref ScraperBucket
-  ScraperFunctionName:
+  FunctionName:
     Description: "Lambda Function Name"
     Value: !Ref ScraperFunction

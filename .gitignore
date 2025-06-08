@@ -132,6 +132,7 @@ typings/
 
 ### OSX ###
 *.DS_Store
+*.pnpm-store
 .AppleDouble
 .LSOverride
 

@@ -6,7 +6,7 @@ const router: IRouter = Router();
 /**
  * GET /api/health-check - Check service health
  */
-router.get('/health-check', (req, res) => res.send('OK'));
+router.get('/health-check', (req: any, res: any) => res.send('OK'));
 
 // Mount wiki routes at /wiki
 router.use('/wiki', wikiRoutes);

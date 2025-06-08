@@ -1,97 +1,85 @@
 import { SQSEvent, SQSHandler } from 'aws-lambda';
-import chromium from '@sparticuz/chromium';
-import puppeteer from 'puppeteer-core';
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { BrowserFactory } from './scraper/browser-factory';
+import { WikipediaJobSchema, NewsJobSchema, ScrapeAction, ScrapeResult } from './types/job.types';
 import { logger } from './utils/logger';
+import { Browser } from 'puppeteer-core';
+import { z } from 'zod';
+import { WikipediaWorkerProcessor } from './workers/wikipedia-worker';
+import { NewsWorkerProcessor } from './workers/news-worker';
 
-const s3 = new S3Client({ region: process.env.AWS_REGION });
-const BUCKET_NAME = process.env.S3_BUCKET_NAME || '';
+const scraperMap: Record<ScrapeAction['action'], { processor: unknown; schema: unknown }> = {
+  wikipedia: {
+    processor: WikipediaWorkerProcessor,
+    schema: WikipediaJobSchema,
+  },
+  news: {
+    processor: NewsWorkerProcessor,
+    schema: NewsJobSchema,
+  },
+};
 
 export const handler: SQSHandler = async (event: SQSEvent) => {
-  for (const record of event.Records) {
-    try {
-      const { messageId, body } = record;
-      const { id, url } = JSON.parse(body);
-      
-      logger.info('Processing scraping task', { messageId, taskId: id, url });
-      
-      // Launch browser with optimized settings for AWS Lambda
-      const browser = await puppeteer.launch({
-        args: [
-          ...chromium.args,
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage',
-          '--disable-accelerated-2d-canvas',
-          '--no-first-run',
-          '--no-zygote',
-          '--single-process',
-          '--disable-gpu',
-          '--disable-software-rasterizer',
-        ],
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath(),
-        headless: chromium.headless,
-        ignoreHTTPSErrors: true,
-      });
+  const browserFactory = new BrowserFactory();
+  let browser: Browser | null = null;
 
-      try {
-        const page = await browser.newPage();
-        await page.setViewport({ width: 1280, height: 800 });
-        
-        logger.info(`Navigating to ${url}`);
-        await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
-        
-        // Take a screenshot
-        const screenshot = await page.screenshot({
-          fullPage: true,
-          type: 'png',
-        });
-        
-        // Get page content
-        const title = await page.title();
-        const content = await page.content();
-        
-        // Upload screenshot to S3
-        const screenshotKey = `screenshots/${id}.png`;
-        await s3.send(
-          new PutObjectCommand({
-            Bucket: BUCKET_NAME,
-            Key: screenshotKey,
-            Body: screenshot,
-            ContentType: 'image/png',
-          })
-        );
-        
-        // Upload HTML content to S3
-        const htmlKey = `content/${id}.html`;
-        await s3.send(
-          new PutObjectCommand({
-            Bucket: BUCKET_NAME,
-            Key: htmlKey,
-            Body: content,
-            ContentType: 'text/html',
-          })
-        );
-        
-        logger.info('Successfully processed task', { 
-          taskId: id, 
-          screenshotKey,
-          htmlKey,
-          title,
-        });
-        
-      } finally {
-        await browser.close();
-      }
-      
-    } catch (error) {
-      logger.error('Error processing message', { 
-        error: error instanceof Error ? error.message : 'Unknown error',
-        stack: error instanceof Error ? error.stack : undefined,
+  try {
+    browser = (await browserFactory.createBrowser()) as Browser;
+    logger.info('Browser launched successfully in worker.', typeof event.Records);
+
+    if (!event.Records || !Array.isArray(event.Records)) {
+      logger.error('Invalid SQS event format: event.Records is not an iterable array.', {
+        event,
       });
-      // Don't throw error to prevent message from being requeued indefinitely
-      // The message will be moved to DLQ after maxReceiveCount is reached
+      return;
+    }
+
+    for (const record of event.Records) {
+      try {
+        const rawBody = JSON.parse(record.body);
+        const { action, payload } = rawBody as ScrapeAction;
+
+        const scraperEntry = scraperMap[action];
+        if (!scraperEntry) {
+          logger.warn(`Unknown action type: ${action}`, { recordBody: rawBody });
+          continue;
+        }
+
+        const schema = scraperEntry.schema as z.ZodType;
+        const parsedPayload = schema.safeParse(payload);
+        if (!parsedPayload.success) {
+          logger.error(`Invalid payload for action ${action}:`, {
+            errors: parsedPayload.error.errors,
+            recordBody: rawBody,
+          });
+          continue; // Skip this record
+        }
+
+        const WorkerProcessorClass = scraperEntry.processor as new () => {
+          processJob: (browser: Browser, rawJob: ScrapeAction) => Promise<ScrapeResult>;
+        };
+        const workerProcessor = new WorkerProcessorClass();
+
+        logger.info(
+          `Processing job for action: ${action}, job_id: ${rawBody.payload.job_id || 'N/A'}`
+        );
+
+        await workerProcessor.processJob(browser, rawBody);
+      } catch (innerError) {
+        logger.error('Error processing single SQS record:', {
+          error: innerError instanceof Error ? innerError.message : innerError,
+          stack: innerError instanceof Error ? innerError.stack : undefined,
+          recordBody: record.body,
+        });
+      }
+    }
+  } catch (outerError) {
+    logger.error('Error in main worker handler (browser launch or overall):', {
+      error: outerError instanceof Error ? outerError.message : outerError,
+      stack: outerError instanceof Error ? outerError.stack : undefined,
+    });
+  } finally {
+    if (browser) {
+      await browser.close().catch(e => logger.error('Error closing browser:', e));
     }
   }
 };

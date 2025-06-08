@@ -12,13 +12,13 @@ let isShuttingDown = false;
 const cleanup = async () => {
   if (isShuttingDown) return;
   isShuttingDown = true;
-  
+
   logger.info('Cleaning up resources...');
-  
+
   // Close the HTTP server
-  return new Promise<void>((resolve) => {
+  return new Promise<void>(resolve => {
     if (server.listening) {
-      server.close((err) => {
+      server.close(err => {
         if (err) {
           logger.error('Error closing server:', err);
         } else {
@@ -78,18 +78,20 @@ const startServer = async () => {
     // Start the server
     server.listen(PORT, () => {
       logger.info(`Server is running on port ${PORT}`);
-      
+
       isShuttingDown = false;
     });
 
     // Handle server errors
     server.on('error', (error: NodeJS.ErrnoException) => {
       if (error.code === 'EADDRINUSE') {
-        logger.error(`Port ${PORT} is already in use. Please wait for the port to be released or use a different port.`);
+        logger.error(
+          `Port ${PORT} is already in use. Please wait for the port to be released or use a different port.`
+        );
       } else {
         logger.error('Server error:', error);
       }
-      
+
       // Attempt to restart the server after a delay
       if (!isShuttingDown) {
         setTimeout(() => {

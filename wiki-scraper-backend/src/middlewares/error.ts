@@ -6,21 +6,16 @@ import logger from '../utils/logger';
 /**
  * Converts error to ApiError if needed
  */
-export const errorConverter = (
-  err: any,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const errorConverter = (err: any, req: Request, res: Response, next: NextFunction) => {
   let error = err;
-  
+
   if (!(error instanceof ApiError)) {
     const statusCode = error.statusCode || httpStatus.INTERNAL_SERVER_ERROR;
     // @ts-ignore - httpStatus[statusCode] is valid but TypeScript doesn't recognize it
     const message = error.message || httpStatus[statusCode] || 'Internal Server Error';
     error = new ApiError(statusCode, message, undefined, false, err.stack);
   }
-  
+
   next(error);
 };
 
@@ -35,18 +30,18 @@ export const errorHandler = (
   next: NextFunction
 ) => {
   const { statusCode, message, errors } = err;
-  
+
   const response = {
     code: statusCode,
     message,
     ...(errors && { errors }),
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
   };
-  
+
   if (process.env.NODE_ENV === 'development') {
     logger.error(err);
   }
-  
+
   res.status(statusCode).json(response);
 };
 

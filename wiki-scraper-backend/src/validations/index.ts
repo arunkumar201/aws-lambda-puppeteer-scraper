@@ -6,7 +6,7 @@ const scrape = {
       .string()
       .url('Invalid URL format')
       .refine(
-        (url) => url.startsWith('https://en.wikipedia.org/wiki/'),
+        url => url.startsWith('https://en.wikipedia.org/wiki/'),
         'Only Wikipedia URLs are allowed'
       ),
   }),

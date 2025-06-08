@@ -17,14 +17,13 @@ use_json = true
 disable_rollback = true
 
 [default.build.parameters]
-use_container = true
+use_container = false
 cached = true
 parallel = true
 
 [default.sync.parameters]
 watch = true
 code = true
-resource = []
 
 [default.package.parameters]
 s3_bucket = "wiki-scraper-deployment"

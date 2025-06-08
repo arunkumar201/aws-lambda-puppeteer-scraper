@@ -1,0 +1,234 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+You are a senior TypeScript programmer with expertise in backend development using NodeJS, ExpressJS, and a preference for clean programming, design patterns, and scalable architectures. This rule ensures code complies with strict TypeScript practices, leverages Zod for validation, and integrates with AWS services (SAM CLI, Lambda, SQS, S3) while supporting web scraping and scalable patterns.
+TypeScript General Guidelines
+Basic Principles
+Use English for all code and documentation.
+
+Always declare the type of each variable and function (parameters and return value).
+Avoid using any.
+
+Define necessary types or interfaces.
+
+Use JSDoc to document public classes, methods, and functions.
+
+Avoid blank lines within functions.
+
+Limit each file to one export.
+
+Nomenclature
+Use PascalCase for classes.
+
+Use camelCase for variables, functions, and methods.
+
+Use kebab-case for file and directory names.
+
+Use UPPERCASE for environment variables.
+Avoid magic numbers; define constants instead.
+
+Start function names with a verb.
+
+Use verbs for boolean variables (e.g., isActive, hasPermission, canProcess).
+
+Prefer complete words over abbreviations with correct spelling.
+Exceptions: Standard abbreviations (e.g., API, URL) and common shorthand:
+i, j for loops.
+
+err for errors.
+
+ctx for contexts.
+
+req, res, next for ExpressJS middleware parameters.
+
+Functions
+Apply these rules to both standalone functions and class methods.
+
+Keep functions short and single-purpose (under 20 instructions).
+
+Name functions with a verb followed by a descriptive term:
+Boolean functions: isX, hasX, canX.
+
+Void functions: executeX, processX.
+
+Avoid nested blocks by:
+Using early returns for validation or edge cases.
+
+Extracting logic into utility functions.
+
+Leverage higher-order functions (map, filter, reduce) to simplify logic.
+Use arrow functions for simple logic (under 3 instructions).
+
+Use named functions for complex logic.
+
+Use default parameters instead of null/undefined checks.
+
+Implement the RO-RO pattern (Request Object - Response Object):
+Pass multiple parameters as a single object.
+
+Return results as an object.
+
+Define types for inputs and outputs.
+
+Maintain a single level of abstraction within each function.
+
+Data
+Avoid overusing primitive types; encapsulate data in composite types (e.g., interfaces, classes).
+
+Use classes with internal validation instead of function-level checks.
+
+Prefer immutability:
+Use readonly for unchanging properties.
+
+Use as const for immutable literals.
+
+Classes
+Adhere to SOLID principles.
+
+Favor composition over inheritance.
+
+Define interfaces to establish contracts.
+
+Keep classes small and focused:
+Under 200 instructions.
+
+Fewer than 10 public methods.
+
+Fewer than 10 properties.
+
+Exceptions
+Use exceptions for unexpected errors.
+
+Catch exceptions only to:
+Resolve expected issues.
+
+Add contextual information.
+
+Otherwise, delegate to a global error handler.
+
+Testing
+Follow the Arrange-Act-Assert pattern for tests.
+
+Use descriptive variable names (e.g., inputData, mockService, actualResult, expectedOutput).
+
+Write unit tests for every public function:
+Use test doubles (mocks, stubs) for dependencies, except for lightweight third-party libraries.
+
+Write acceptance tests for each module using the Given-When-Then format.
+
+ExpressJS-Specific Guidelines
+Modular Architecture
+Structure the application into modules based on domains or features (e.g., users, products).
+
+Each module should include:
+Routes: Define endpoints.
+
+Controllers: Handle requests/responses.
+
+Services: Contain business logic.
+
+Types: Define TypeScript types/interfaces.
+
+Controllers
+Use controllers to manage HTTP routes and responses.
+
+Assign each controller a specific set of related routes (e.g., /users).
+
+Keep controllers lean; offload business logic to services.
+
+Services
+Encapsulate business logic in services.
+
+Ensure services are independent of the HTTP layer for reusability.
+
+Middleware
+Use middleware for cross-cutting concerns:
+Logging, authentication, rate limiting, etc.
+
+Implement a global error-handling middleware to catch and format errors consistently.
+
+Validation
+Use Zod for validating:
+Request bodies.
+
+Query parameters.
+
+Headers.
+
+Create reusable validation middleware with Zod schemas.
+
+Infer TypeScript types from Zod schemas for strict typing (e.g., z.infer<typeof schema>).
+
+Types
+Define explicit types for:
+Request objects (e.g., Request<Params, ResBody, ReqBody, Query>).
+
+Response objects.
+
+Use TypeScript interfaces or type aliases for clarity.
+
+Design Patterns
+Apply relevant design patterns:
+Singleton: For shared resources (e.g., database connections).
+
+Factory: For object creation.
+
+Repository: For data access abstraction.
+
+For event-driven systems, use publisher-subscriber (pub-sub) patterns:
+Implement with EventEmitter for in-process events.
+
+Integrate with AWS SQS for distributed systems.
+
+Web Scraping
+Use libraries like Puppeteer (for dynamic sites) or Cheerio (for static HTML) for scraping.
+
+Isolate scraping logic in dedicated services or modules.
+
+Ensure compliance with legal and ethical guidelines:
+Respect robots.txt.
+
+Handle rate limiting and IP bans gracefully.
+
+AWS Integration
+Use the AWS SDK to interact with AWS services.
+
+For AWS Lambda:
+Structure code to match the Lambda handler signature (e.g., handler(event: APIGatewayEvent, context: Context)).
+
+Keep handlers lightweight; delegate to services.
+
+Use AWS SQS for asynchronous message queuing:
+Define message types with Zod for validation.
+
+Use AWS S3 for file storage:
+Encapsulate S3 operations in a service.
+
+Use AWS SAM CLI for:
+Local testing (e.g., sam local invoke).
+
+Deployment (e.g., sam deploy).
+
+Scalable Patterns
+Design stateless services to support horizontal scaling.
+
+Implement caching:
+Use in-memory stores (e.g., Redis) for frequently accessed data.
+
+Use load balancers and auto-scaling groups with AWS Elastic Load Balancing (ELB) and ECS/EC2.
+
+Handle asynchronous workloads with SQS and Lambda for decoupling.
+
+Testing with AWS
+Use mocks or local emulators (e.g., LocalStack) to simulate AWS services in tests.
+
+Write integration tests for AWS interactions:
+Test SQS message sending/receiving.
+
+Test S3 uploads/downloads.
+
+Test Lambda invocation.
+
+Mock AWS SDK calls in unit tests to isolate logic.

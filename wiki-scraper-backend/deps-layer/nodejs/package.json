@@ -1,0 +1,13 @@
+{
+  "name": "wiki-scraper-deps",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "puppeteer-core": "^22.15.0",
+    "@puppeteer/browsers": "^2.10.5",
+    "winston": "^3.11.0"
+  },
+  "scripts": {
+    "build": "pnpm exec esbuild src/api.ts --bundle --platform=node --target=node18 --external:puppeteer-core --external:@sparticuz/chromium --external:winston --outfile=dist/api.js && pnpm exec esbuild src/worker.ts --bundle --platform=node --target=node18 --external:puppeteer-core --external:@sparticuz/chromium --external:winston --outfile=dist/worker.js"
+  }
+}

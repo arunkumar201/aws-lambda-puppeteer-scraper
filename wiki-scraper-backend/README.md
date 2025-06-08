@@ -55,7 +55,7 @@ Start the development server with hot-reload:
 pnpm dev
 ```
 
-The API will be available at `http://localhost:3000`
+The API will be available at `http://localhost:3001`
 
 ### 5. Build for Production
 
@@ -73,8 +73,8 @@ pnpm test
 
 Once the server is running, you can access the API documentation at:
 
-- Swagger UI: `http://localhost:3000/api-docs`
-- OpenAPI JSON: `http://localhost:3000/docs.json`
+- Swagger UI: `http://localhost:3001/api-docs`
+- OpenAPI JSON: `http://localhost:3001/docs.json`
 
 ## Available Scripts
 
@@ -138,7 +138,7 @@ After successful deployment, you'll receive the API Gateway URL in the outputs. 
 | Variable | Description | Default |
 |----------|-------------|---------|
 | NODE_ENV | Node environment | `development` |
-| PORT | Port to run the server | `3000` |
+| PORT | Port to run the server | `3001` |
 | AWS_ACCESS_KEY_ID | AWS access key ID | - |
 | AWS_SECRET_ACCESS_KEY | AWS secret access key | - |
 | AWS_REGION | AWS region | `ap-south-1` |
@@ -174,25 +174,82 @@ After successful deployment, you'll receive the API Gateway URL in the outputs. 
   }
   ```
 
-## Testing
+## API Flow for Local Testing
 
-### Unit Tests
+### Batch Scraping Endpoint
 
-```bash
-pnpm test:unit
+**POST** `/api/scrape`
+
+Accepts a batch of scraping jobs, each specifying an `action` (e.g., `wikipedia`, `news`) and a `payload` (site-specific job data).
+
+#### Request Body Example
+```json
+{
+  "jobs": [
+    {
+      "action": "wikipedia",
+      "payload": {
+        "user_id": "user123",
+        "url": "https://en.wikipedia.org/wiki/Node.js"
+      }
+    },
+    {
+      "action": "news",
+      "payload": {
+        "user_id": "user456",
+        "url": "https://news.ycombinator.com/"
+      }
+    }
+  ]
+}
 ```
 
-### Integration Tests
-
-```bash
-pnpm test:integration
+#### Response Example
+```json
+{
+  "results": [
+    {
+      "action": "wikipedia",
+      "success": true,
+      "data": {
+        "screenshotKey": "https://your-bucket.s3.amazonaws.com/screenshots/jobid.png",
+        "markdown": "...",
+        "links": ["https://...", ...]
+      }
+    },
+    {
+      "action": "news",
+      "success": true,
+      "data": {
+        "screenshotKey": "https://your-bucket.s3.amazonaws.com/screenshots/jobid.png",
+        "markdown": "...",
+        "links": ["https://...", ...]
+      }
+    }
+  ]
+}
 ```
 
-### E2E Tests
-
-```bash
-pnpm test:e2e
+#### Example cURL Command
+```sh
+curl -X POST http://localhost:3001/api/scrape \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jobs": [
+      { "action": "wikipedia", "payload": { "user_id": "user123", "url": "https://en.wikipedia.org/wiki/Node.js" } },
+      { "action": "news", "payload": { "user_id": "user456", "url": "https://news.ycombinator.com/" } }
+    ]
+  }'
 ```
+
+- Each job result includes `success`, `data` (on success), or `error` (on failure).
+- The `screenshotKey` is a public S3 URL to the screenshot.
+- The `markdown` and `links` fields contain extracted content.
+
+---
+
+For more details, see the code in `src/app.ts`, `src/types/scrape.types.ts`, and the scrapers in `src/scraper/`.
+
 
 ## Monitoring and Logging
 

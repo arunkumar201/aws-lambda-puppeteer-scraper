@@ -1,0 +1,58 @@
+# Development dependencies
+node_modules/typescript/
+node_modules/@types/
+node_modules/eslint*/
+node_modules/prettier/
+node_modules/@typescript-eslint/
+node_modules/ts-node/
+node_modules/ts-jest/
+node_modules/jest/
+node_modules/nodemon/
+node_modules/supertest/
+node_modules/rimraf/
+node_modules/puppeteer
+# AWS SDK v2 (Lambda provides v2 runtime)
+node_modules/aws-sdk/
+node_modules/aws-sdk-*/
+
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Test files
+__tests__/
+coverage/
+*.test.*
+*.spec.*
+
+# Build artifacts
+*.tsbuildinfo
+dist/*.map
+
+# Documentation and configs
+*.md
+.git*
+.prettier*
+.eslint*
+tsconfig.*
+jest.config.*
+
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Environment and config files
+.env*
+!.env.example
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
