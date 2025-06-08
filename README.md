@@ -68,6 +68,8 @@ flowchart LR
     style B fill:#add8e6,stroke:#333,stroke-width:2px
 ```
 
+https://github.com/user-attachments/assets/d0d779b7-f2d3-42b1-afec-baf80fe171b8
+
 ## Features
 - 🚀 Scrape pages with Puppeteer
 - 📸 Take full-page screenshots
@@ -87,7 +89,6 @@ flowchart LR
 - Docker (for local testing with AWS SAM)
 
 ## Getting Started
-
 ### 1. Clone the repository
 
 ```bash
