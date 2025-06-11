@@ -235,13 +235,16 @@ export class BrowserFactory {
           launchOptions
         )) as unknown as PuppeteerBrowser;
       } else {
-        browser = (await puppeteerCore.launch({
-          args: await this.getLaunchArgs([...chromium.args]),
-          defaultViewport: chromium.defaultViewport,
-          executablePath: await chromium.executablePath(),
-          headless: chromium.headless,
-          timeout: BROWSER_TIMEOUT_MS,
-        })) as unknown as PuppeteerBrowser;
+          const PuppeteerExtra = await import('puppeteer-extra');
+          const StealthPlugin = await import('puppeteer-extra-plugin-stealth');
+          PuppeteerExtra.default.use(StealthPlugin.default());
+          browser = (await PuppeteerExtra.default.launch({
+            args: await this.getLaunchArgs([...chromium.args]),
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath(),
+            headless: chromium.headless,
+            timeout: BROWSER_TIMEOUT_MS,
+          })) as unknown as PuppeteerBrowser;
       }
 
       const page = await browser.newPage();
