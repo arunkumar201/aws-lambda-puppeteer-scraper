@@ -73,5 +73,178 @@
       "markdown": "",
       "links": []
     }
+  },
+  {
+    "job_id": "5aadd3d5-d24e-4362-910c-6b8d1c8ea6c2",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749666719623-1866b28e-882d-4f07-8a0a-fc2c233f9d13.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPL6C76FT5%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T183159Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBSPn1B4BETZ6Ohd5Ekel6oMVhrTPIfecd2NLREB7gu7wIgFsRotANOWLYsGllLx1EUEhrvYBrrUQFpVVgdo6q77i8qjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMosw3dwKJIG0Q7YQirgAjMC8kI5cKuB7jjlEqT6SQYZEK4o1BQ%2FNH3CDO5bMlCirLXJGKp2cy2oHCY7Ospg2XV%2FXJvr7%2FQYyhXmCNCDfQXQySMtsA%2BscTsbMQ4yvdyCwnwnC8W73ZKYiCICpH2M9%2BK3InEllPfLr7Xi1cBHERcCrHbcXk6izvnnmYeeKmCdaGavvBcAznYjCV0txCPTvjFankkvvHjif8Y%2BpDQZ7Zi1H%2FyE63p%2B5EgzCLwOgNRVIWxyRgoxenN73vDyALUjF2G3q49gHCz7uSpDG%2FAMTIxXbOu%2Bt4u%2BXg4tCmoRvbSHUPP3raCTjQLg3ZYbjtKkohIJrZDEwz9k7BzLfbVxs8yWNrEK7WDFCTizKL2XtDnFv7jrdRBbuTxDWWxMc1nVg1i7yrqnYunl3S1Cm4lMvK7kP%2BIyj9tjxIG3Kepu80JdYqT49XzsvUydx1ESIkL8qBHnbK6vKNljiwUkD0H5MJcwhZenwgY6nwHM8eHEm0ta%2BSUORgrTO0vRhzIW0Tfe05YgaFBvQoHCnHJi54%2Fn%2BQD2knUEgBFxF4MOdyVhAjDI6r55es1vWhAQbR6VlDVEwRef6WvIsV2Sq9431neiRdrVAuzJs%2B5rpivtnseMXfsjX1%2FuLwtrV3%2BGLuhuzTaJpEPoeBHrfYNYhOaDEBpWkIDeAStbRPCW8fVZSlpHAXah8HMY2sIyKLw%3D&X-Amz-Signature=d134883a9575d6847c7210cc5cc2f6d851efa8b7fba0415ae1233aaf85e9a256&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# Welcome back",
+      "links": [
+        "https://openai.com/policies/terms-of-use",
+        "https://openai.com/policies/privacy-policy"
+      ]
+    }
+  },
+  {
+    "job_id": "d0e3df3f-399b-488f-ac11-15a369799059",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667335823-8b8b29b1-c1ae-4e28-acb8-74875114199f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184216Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=2fc0c11d18d954628c4b72911d0f10d644e9a1136555fca37674d4ba3ba0bf12&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "ed964448-3af9-4758-a908-83bdfc93722d",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667520948-165ab64e-e2e4-4fc9-98e8-0358b5795aab.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184521Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=a2b49d4ae43366d8bf01ab85c8ced932ad27a65a9bf7d5ddec0bee66646fb3be&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# latest news  about indian stock market\n\nThe latest news on the Indian stock market as of June 11, 2025, indicates a modest positive close with the BSE Sensex rising by 123.42 points (0.15%) to 82,515.14 and the NSE Nifty gaining 37.15 points (0.15%) to close at 25,141.4012. The market showed resilience in large-cap stocks, supported by institutional investors favoring companies with stable earnings outlooks, while profit booking persisted in broader markets due to elevated valuations12.\n\nSector-wise, the Auto and IT sectors were in focus, with auto stocks gaining on improved monthly sales and IT stocks benefiting from optimism about a potential U.S.-China trade resolution12. The Nifty Oil & Gas and IT sectors were the top gainers, up by 1.47% and 1.26%, respectively, while sectors like Bank, FMCG, and Financial Services saw some declines2.\n\nAmong the top gainers on the Sensex were HCL Tech, Infosys, Tech Mahindra, Bajaj Finserv, and Reliance Industries, whereas Power Grid, IndusInd Bank, Adani Ports, HDFC Bank, Nestle India, and Hindustan Unilever were among the laggards2. The Indian Energy Exchange (IEX) shares fell sharply by about 10% amid market coupling news2.\n\nTechnically, the market remains positive with the Nifty holding above a crucial support level of 24,850, and analysts suggest any dips should be viewed as buying opportunities, with a potential short-term target around 25,35012.\n\nIn broader market developments, the National Securities Depository Ltd. plans an IPO expected to raise about $400 million in July, and state-owned Ireda raised over ₹2,000 crore via a qualified institutions placement2. Additionally, credit rating companies CRISIL and CARE Ratings saw significant rallies, reflecting a healthy business outlook2.\n\nOverall, the sentiment is cautiously optimistic, with market participants awaiting key macroeconomic data and updates on trade negotiations to guide further direction12.",
+      "links": [
+        "https://economictimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-thursday/articleshow/121782999.cms",
+        "https://www.business-standard.com/markets/news/stock-market-live-updates-june-11-nse-bse-gift-nifty-india-us-china-trade-fii-dii-ipo-today-us-cpi-125061100106_1.html",
+        "https://www.screener.in/screens/1547457/tomorrow-bullish-or-bearish-best-stock/",
+        "https://www.moneycontrol.com/stocksmarketsindia/"
+      ]
+    }
+  },
+  {
+    "job_id": "9ccc0e03-45be-457e-9644-9e1a9aa1dbbc",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667796970-edeaa348-a3c1-4431-bf67-8f0c2cb383f4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184957Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=4d1f3d5c01dce129ecf960cc49495d73fd1ef0ca496e8d49ee5a6d5d70fd0315&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# latest news  about indian stock market\n\nThe latest news about the Indian stock market on June 11, 2025, indicates a positive but cautious sentiment with the benchmark indices closing higher amid volatility and mixed sectoral trends.\n\nThe BSE Sensex closed up by 123.42 points (0.15%) at 82,515.14, and the NSE Nifty50 gained 37.15 points (0.15%) to close at 25,141.40129.\n\n\nMarket experts note that profit booking continues in broader markets due to elevated valuations, but large-cap stocks show resilience supported by institutional investors favoring companies with stable earnings outlooks12.\n\n\nThe Auto and IT sectors were in focus, with auto stocks gaining on improved monthly sales and IT stocks benefiting from optimism around a potential U.S.-China trade resolution. Oil & Gas and IT sectors were among the top gainers, while Bank, FMCG, and Financial Services sectors dragged the market12.\n\n\nAmong Sensex constituents, top gainers included HCL Tech, Infosys, Tech Mahindra, Bajaj Finserv, and Reliance Industries. Laggards included Power Grid, IndusInd Bank, Adani Ports, HDFC Bank, Nestle India, and Hindustan Unilever2.\n\n\nTechnical analysis suggests the Nifty remains volatile but holds above key support levels, with a bullish outlook supported by a \"golden crossover.\" Dips are seen as buying opportunities, with support at 24,850 and potential to move towards 25,350 in the short term12.\n\n\nIndian Energy Exchange (IEX) shares fell sharply by over 10% amid reports related to market coupling discussions by the Power Minister2.\n\n\nThe broader market showed mixed trends with Midcap and Smallcap indices ending lower or flat2.\n\n\nOther notable corporate developments include a positive rally in credit rating companies CRISIL and CARE, a planned IPO by National Securities Depository Ltd. expected in July, and a merger approval for Inox Wind Energy with Inox Wind Ltd2.\n\n• The BSE Sensex closed up by 123.42 points (0.15%) at 82,515.14, and the NSE Nifty50 gained 37.15 points (0.15%) to close at 25,141.40129.\n\nThe BSE Sensex closed up by 123.42 points (0.15%) at 82,515.14, and the NSE Nifty50 gained 37.15 points (0.15%) to close at 25,141.40129.\n\n• Market experts note that profit booking continues in broader markets due to elevated valuations, but large-cap stocks show resilience supported by institutional investors favoring companies with stable earnings outlooks12.\n\nMarket experts note that profit booking continues in broader markets due to elevated valuations, but large-cap stocks show resilience supported by institutional investors favoring companies with stable earnings outlooks12.\n\n• The Auto and IT sectors were in focus, with auto stocks gaining on improved monthly sales and IT stocks benefiting from optimism around a potential U.S.-China trade resolution. Oil & Gas and IT sectors were among the top gainers, while Bank, FMCG, and Financial Services sectors dragged the market12.\n\nThe Auto and IT sectors were in focus, with auto stocks gaining on improved monthly sales and IT stocks benefiting from optimism around a potential U.S.-China trade resolution. Oil & Gas and IT sectors were among the top gainers, while Bank, FMCG, and Financial Services sectors dragged the market12.\n\n• Among Sensex constituents, top gainers included HCL Tech, Infosys, Tech Mahindra, Bajaj Finserv, and Reliance Industries. Laggards included Power Grid, IndusInd Bank, Adani Ports, HDFC Bank, Nestle India, and Hindustan Unilever2.\n\nAmong Sensex constituents, top gainers included HCL Tech, Infosys, Tech Mahindra, Bajaj Finserv, and Reliance Industries. Laggards included Power Grid, IndusInd Bank, Adani Ports, HDFC Bank, Nestle India, and Hindustan Unilever2.\n\n• Technical analysis suggests the Nifty remains volatile but holds above key support levels, with a bullish outlook supported by a \"golden crossover.\" Dips are seen as buying opportunities, with support at 24,850 and potential to move towards 25,350 in the short term12.\n\nTechnical analysis suggests the Nifty remains volatile but holds above key support levels, with a bullish outlook supported by a \"golden crossover.\" Dips are seen as buying opportunities, with support at 24,850 and potential to move towards 25,350 in the short term12.\n\n• Indian Energy Exchange (IEX) shares fell sharply by over 10% amid reports related to market coupling discussions by the Power Minister2.\n\nIndian Energy Exchange (IEX) shares fell sharply by over 10% amid reports related to market coupling discussions by the Power Minister2.\n\n• The broader market showed mixed trends with Midcap and Smallcap indices ending lower or flat2.\n\nThe broader market showed mixed trends with Midcap and Smallcap indices ending lower or flat2.\n\n• Other notable corporate developments include a positive rally in credit rating companies CRISIL and CARE, a planned IPO by National Securities Depository Ltd. expected in July, and a merger approval for Inox Wind Energy with Inox Wind Ltd2.\n\nOther notable corporate developments include a positive rally in credit rating companies CRISIL and CARE, a planned IPO by National Securities Depository Ltd. expected in July, and a merger approval for Inox Wind Energy with Inox Wind Ltd2.\n\nOverall, the market is cautiously optimistic, influenced by global trade developments, sectoral performances, and awaiting key macroeconomic data such as US inflation figures12.\n\nThis summary reflects the latest market close and expert views as of June 11, 2025.",
+      "links": [
+        "https://economictimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-thursday/articleshow/121782999.cms",
+        "https://www.business-standard.com/markets/news/stock-market-live-updates-june-11-nse-bse-gift-nifty-india-us-china-trade-fii-dii-ipo-today-us-cpi-125061100106_1.html",
+        "https://www.screener.in/screens/1547457/tomorrow-bullish-or-bearish-best-stock/",
+        "https://www.moneycontrol.com/stocksmarketsindia/",
+        "https://economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-11-june-2025/liveblog/121765497.cms"
+      ]
+    }
+  },
+  {
+    "job_id": "d3723a76-a99b-4939-9b2e-ba3961789c82",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749666818831-5e0ad619-9f49-4a6a-8d5c-298946d22f6f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPL6C76FT5%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T183338Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBSPn1B4BETZ6Ohd5Ekel6oMVhrTPIfecd2NLREB7gu7wIgFsRotANOWLYsGllLx1EUEhrvYBrrUQFpVVgdo6q77i8qjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMosw3dwKJIG0Q7YQirgAjMC8kI5cKuB7jjlEqT6SQYZEK4o1BQ%2FNH3CDO5bMlCirLXJGKp2cy2oHCY7Ospg2XV%2FXJvr7%2FQYyhXmCNCDfQXQySMtsA%2BscTsbMQ4yvdyCwnwnC8W73ZKYiCICpH2M9%2BK3InEllPfLr7Xi1cBHERcCrHbcXk6izvnnmYeeKmCdaGavvBcAznYjCV0txCPTvjFankkvvHjif8Y%2BpDQZ7Zi1H%2FyE63p%2B5EgzCLwOgNRVIWxyRgoxenN73vDyALUjF2G3q49gHCz7uSpDG%2FAMTIxXbOu%2Bt4u%2BXg4tCmoRvbSHUPP3raCTjQLg3ZYbjtKkohIJrZDEwz9k7BzLfbVxs8yWNrEK7WDFCTizKL2XtDnFv7jrdRBbuTxDWWxMc1nVg1i7yrqnYunl3S1Cm4lMvK7kP%2BIyj9tjxIG3Kepu80JdYqT49XzsvUydx1ESIkL8qBHnbK6vKNljiwUkD0H5MJcwhZenwgY6nwHM8eHEm0ta%2BSUORgrTO0vRhzIW0Tfe05YgaFBvQoHCnHJi54%2Fn%2BQD2knUEgBFxF4MOdyVhAjDI6r55es1vWhAQbR6VlDVEwRef6WvIsV2Sq9431neiRdrVAuzJs%2B5rpivtnseMXfsjX1%2FuLwtrV3%2BGLuhuzTaJpEPoeBHrfYNYhOaDEBpWkIDeAStbRPCW8fVZSlpHAXah8HMY2sIyKLw%3D&X-Amz-Signature=fb921f8945804199d8e7901a94e44af7eddc29ad4f04abf876213adcf42e9179&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "1b80eb06-da05-4177-ace2-e3e2095383b4",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667611342-627daf1e-a611-4030-8036-e32babae148b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184651Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=267d612420dca2420e1d9421762b8fe85f36799e2b4861965cc6163eb45f39d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# Welcome back",
+      "links": [
+        "https://openai.com/policies/terms-of-use",
+        "https://openai.com/policies/privacy-policy"
+      ]
+    }
+  },
+  {
+    "job_id": "3fa74d8c-3af3-4c09-80d1-bed6e633b470",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667545407-eb6faccd-7bfe-4657-a44e-a98ef8c15eb0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184545Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=185b0e26ba6490c44099cd5f1f02f987ea313c4a8d2aabcb373a366b8ce2f3fd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "Core Chat\n          \n          Advanced AI. One Interface.\n        \n        \n          \n            Voice Chat\n          \n          Real-time voice chat\n\n• Core Chat\n          \n          Advanced AI. One Interface.\n\n• Voice Chat\n          \n          Real-time voice chat\n\n\n## What can I help with?\n\nAdvanced AI. One Interface.\n\nYou must be logged in to post a comment.\n\n\n# Search results\n\n\n## No results found\n\n\n## Filter options",
+      "links": [
+        "https://chatgate.ai/",
+        "https://chatgate.ai/voice-chat/",
+        "https://chatgate.ai/image-ai/",
+        "https://chatgate.ai/podcast-ai/",
+        "https://chatgate.ai/app/",
+        "https://chatgate.ai/my-account",
+        "https://chatgate.ai/help/"
+      ]
+    }
+  },
+  {
+    "job_id": "8fa1687d-4e96-4556-8c89-ed44902d695e",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667463423-9980200e-ef78-4d6c-9bd4-b82b2dfb00f9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184423Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=dcb8e76e4da04fe60a4fb626ab2b6717272aaa33448731c2af6dc7bbe12d07e4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "7dc65b85-4f70-41ac-bda8-06efd2aa5c6b",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667998215-01fb7d52-aba0-4d99-b792-089fa17d6330.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T185318Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=252ad8842e1cc25ad7d97a916fcb60d78129142d6e49d3f5f6d9193a13c6e8e3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "",
+      "links": [
+        "https://openai.com/terms",
+        "https://openai.com/privacy",
+        "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+  {
+    "job_id": "e5d3f79b-bda4-4dc0-a847-8826fdbc7b5a",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667849587-bf3bbfbf-9081-4951-bc56-32692efa79bb.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T185049Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=a076deb75482799af0b001265e14dcf4b4f2b92c07d631db15d4d529eff9f6ad&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# www.perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "bb4c07f7-3ea1-4b7b-9514-7915a055b0e3",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667898610-1db29a6e-451c-4b85-8eaa-2afe10073d45.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T185138Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=ac04e0fabb8c49e132871b4ff8e41a964e54cbe71025ab34285eb2c399111786&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "d31e9bb8-0ce5-45d7-a149-f45e1b979b40",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667658484-c16de20b-016b-4bdc-8aa8-681bec0b75f3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184738Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=350ad1cd5073c3290bbc4f89e1270883b02b1eb8b11e49e632d8d6e93fdffdba&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "3c4e9d4a-81ed-4f4d-a8b8-0358c1e08f4f",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749667708918-f9fd220a-a313-4774-97c1-76cd3b8e4de6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T184828Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=c1ee961dfeb98447626b2c3cb9f15d599538f544fb027615a2e56e93d0c9dc4b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "b6f61325-4f89-4d41-8998-b8c9bbdca0c3",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749668058255-844b97e2-04f8-481e-b6ba-ff91eee8ee2b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIASFUIRJZPFHDOOLR6%2F20250611%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250611T185418Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCmFwLXNvdXRoLTEiRjBEAiBtLDl%2B7exLEOba2OyubfKfjLJwUzAxnXjuPvh4SrfwrwIgWktJPEZxtz%2Fqo50ntG6z7thEb4Qb6aPYbPgS6GI%2FOAIqjAMI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxNDk1MzY0NjAzODIiDMnO4uLAzMXqDu8BJyrgAtMP4m3zLT6L%2FhRHH0arij7t0C79suKfU94TBQ3thsF22DIONHn2rOlqb2SE42V0%2FDFuE7s%2F6QjsjtJCkS4yEq6RYcgabdQqWi9anINHLho1s5Xm0spvlBQIonKJdOzy6UPe4cSb3zOSTUaejODOSljZZ4usqpzks5%2BQ2bNlhBTaenVnrlSOw2wp9HVouTbK4AtH0uhWlTIGNB4uMllY7xQt9ZpGlD1cX6JPiO6%2BBmV7abn4ecgv8BW3fMYsMUcOFJkvd%2FyHDZ9eOB9dV5mUHPF43ZC64VQ1zb0LfugkWooKzF6ma0mGAYZ38Clj853yEDtnpzsPE4PUh9Ub%2BkpR%2FChDQbB6sJWEDU19GN9yNnrQf4ZmW4roi0LbF0hoaFOkqLcPr5Nkb3%2BT7%2F2ZhyyniCOcVrYJAzeF6nSBJ8L6dYMDEn03dAuMIthN1XdJLlsrfYYLWIev1YJ35vjh6ZCX1Ccw%2BpunwgY6nwFsrTPRcsvOWGTsr1ytFOwjJpPQaLxbG2jN9eybVvPkWoSEvZy9XscMtZFzm4%2F6NB2%2BHKqiByUBWGf1Le4qHrsxJaH9mdoziBPJ264r%2F4oQCyRwNmQZ6pHr6ls9qxzj4mxTGNJL2eB0X%2FGcUD6J1yJCyYS7sJugXyC2wYD7HWIU%2Fp0sdm2KhuYX0mR6BwXA4YeB7NkLfOlzmY6gYCnWbXA%3D&X-Amz-Signature=92a6d6010e020ee6d8df802eff87d27a13ba16b2aaef307c1c624b0f25788779&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "markdown": "# Welcome back",
+      "links": [
+        "https://openai.com/policies/terms-of-use",
+        "https://openai.com/policies/privacy-policy"
+      ]
+    }
   }
 ]
