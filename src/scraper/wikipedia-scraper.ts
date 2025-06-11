@@ -1,11 +1,6 @@
 import { Browser } from 'puppeteer-core';
 import { WikipediaJob, ScrapeResult } from '../types/job.types';
 import { ScreenshotHelper, CheerioHelper } from './screenshot-helper';
-import {
-  createStreamHandler,
-  StreamResponseHandler,
-  waitForChatGPTResponse,
-} from '../utils/waitForResponse';
 import { MultiPlatformChatBotWaiter } from '../utils/multiPlatformChatBotWaiter';
 
 export class WikipediaScraper {
