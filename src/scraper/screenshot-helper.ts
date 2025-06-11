@@ -112,3 +112,4 @@ export class CheerioHelper {
     return result.join('\n\n').trim();
   }
 }
+
