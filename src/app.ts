@@ -111,7 +111,7 @@ app.post('/api/scrape', async (req: any, res: any) => {
       })
     );
 
-    await browser.close();
+    // await browser.close();
 
     const response: ScrapeBatchResponse = { results };
     return res.status(200).json(response);

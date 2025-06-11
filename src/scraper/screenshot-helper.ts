@@ -22,12 +22,13 @@ export class ScreenshotHelper {
   ): Promise<string> {
     const screenshotBuffer = (await page.screenshot({ fullPage, type })) as Buffer;
     const key = `screenshots/${Date.now()}-${uuidv4()}.${type}`;
-    const url = await this.s3.uploadS3Local({
+    await this.s3.uploadS3Local({
       bucket: this.bucket,
       key,
       body: screenshotBuffer,
       contentType: type === 'png' ? 'image/png' : 'image/jpeg',
     });
+    const url = await this.s3.getPresignedUrl(this.bucket, key);
     logger.info(`Screenshot uploaded to S3: ${url}`);
     return url;
   }
@@ -77,10 +78,10 @@ export class CheerioHelper {
     const root = $('article').first().length
       ? $('article').first()
       : $('main').first().length
-        ? $('main').first()
-        : $('section').first().length
-          ? $('section').first()
-          : $('body');
+      ? $('main').first()
+      : $('section').first().length
+      ? $('section').first()
+      : $('body');
 
     // eslint-disable-next-line prefer-const
     let result: string[] = [];
