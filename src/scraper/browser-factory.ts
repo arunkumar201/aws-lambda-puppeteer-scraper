@@ -93,14 +93,25 @@ export class BrowserFactory {
     // Only set up proxy if all required proxy config is available
     if (this.proxyConfig.isAvailable) {
       try {
+        logger.debug('Proxy config values:', {
+          host: this.proxyConfig.host,
+          port: this.proxyConfig.port,
+          username: this.proxyConfig.username ? '****' : 'N/A',
+          password: this.proxyConfig.password ? '****' : 'N/A',
+          proxyUrl: this.proxyConfig.proxyUrl,
+        });
+
+        logger.info('setupProxyAuth', JSON.stringify(this.proxyConfig));
         this.proxyServer = await proxyChain.anonymizeProxy({
           url: this.proxyConfig.proxyUrl,
           port: 0,
           ignoreProxyCertificate: true,
         });
 
+        logger.debug('Anonymized proxy server response:', this.proxyServer);
+
         logger.log({
-          message: 'Proxy server created',
+          message: `Proxy server created on port: ${new URL(this.proxyServer).port}`,
           level: 'info',
         });
 
@@ -196,18 +207,13 @@ export class BrowserFactory {
       let browser: PuppeteerBrowser;
 
       if (isMacOS) {
-        const puppeteer = await import('puppeteer');
         const PuppeteerExtra = await import('puppeteer-extra');
         const StealthPlugin = await import('puppeteer-extra-plugin-stealth');
         PuppeteerExtra.default.use(StealthPlugin.default());
         const launchOptions: Puppeteer.LaunchOptions = {
           args: await this.getLaunchArgs(),
-          headless: true,
-          defaultViewport: {
-            width: 1280,
-            height: 800,
-          },
-
+          headless: false,
+          defaultViewport: chromium.defaultViewport,
           timeout: BROWSER_TIMEOUT_MS,
           ...this.config,
         };
@@ -215,9 +221,9 @@ export class BrowserFactory {
         if (isDevelopment && launchOptions) {
           launchOptions.headless = false;
 
-          launchOptions.args =
-            launchOptions?.args &&
-            launchOptions?.args.filter(arg => !arg.startsWith('--proxy-server='));
+          //   launchOptions.args =
+          //     launchOptions?.args &&
+          //     launchOptions?.args.filter(arg => !arg.startsWith('--proxy-server='));
         }
 
         logger.log({
@@ -235,16 +241,32 @@ export class BrowserFactory {
           launchOptions
         )) as unknown as PuppeteerBrowser;
       } else {
-          const PuppeteerExtra = await import('puppeteer-extra');
-          const StealthPlugin = await import('puppeteer-extra-plugin-stealth');
-          PuppeteerExtra.default.use(StealthPlugin.default());
-          browser = (await PuppeteerExtra.default.launch({
-            args: await this.getLaunchArgs([...chromium.args]),
-            defaultViewport: chromium.defaultViewport,
-            executablePath: await chromium.executablePath(),
-            headless: chromium.headless,
-            timeout: BROWSER_TIMEOUT_MS,
-          })) as unknown as PuppeteerBrowser;
+        const PuppeteerExtra = await import('puppeteer-extra');
+        const StealthPlugin = await import('puppeteer-extra-plugin-stealth');
+        PuppeteerExtra.default.use(StealthPlugin.default());
+        const launchOptions: Puppeteer.LaunchOptions = {
+          args: await this.getLaunchArgs([...chromium.args]),
+          defaultViewport: chromium.defaultViewport,
+          executablePath: await chromium.executablePath(),
+          headless: chromium.headless,
+          timeout: BROWSER_TIMEOUT_MS,
+          ...this.config,
+        };
+
+        logger.log({
+          message: 'Launching browser with options',
+          options: {
+            ...launchOptions,
+            args:
+              launchOptions.args &&
+              launchOptions.args.map(arg => (arg.includes('proxy') ? '--proxy-server=****' : arg)),
+          },
+          level: 'debug',
+        });
+
+        browser = (await PuppeteerExtra.default.launch(
+          launchOptions
+        )) as unknown as PuppeteerBrowser;
       }
 
       const page = await browser.newPage();
