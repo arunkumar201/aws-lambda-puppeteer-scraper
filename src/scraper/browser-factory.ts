@@ -426,7 +426,7 @@ function startKeepAlive() {
 process.on('SIGINT', async () => {
   logger.info('SIGINT received. Triggering global shutdown handler.');
   await BrowserFactory.globalShutdownHandler();
-  process.exit(0); // Exit cleanly
+  // process.exit(0); // Exit cleanly
 });
 
 process.on('exit', async code => {
