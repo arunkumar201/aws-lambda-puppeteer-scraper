@@ -1,186 +1,138 @@
 [
   {
-    "job_id": "e812caa8-6b5c-4e07-ba04-acfd89de5ce4",
-    "action": "news",
+    "job_id": "4783b4cf-712c-4023-8a55-55e6e91d3dcf",
+    "action": "wikipedia",
     "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751322566-9085c5ce-7f21-4bbb-a69b-5ea11832e34e.png",
-      "markdown": "# ChatGPT\n\n<!DOCTYPE html><html lang=\"en-US\" data-build=\"prod-68702aa396c7c7505b980ce46c96c0240313cc88\" dir=\"ltr\" class=\"light\" style=\"color-scheme: light;\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>ChatGPT</title><meta name=\"description\" content=\"ChatGPT helps you get answers, find inspiration and be more productive. It is free to use and easy to try. Just ask and ChatGPT can help with writing, learning, brainstorming and more.\"><meta name=\"keyword\" content=\"ai chat,ai,chap gpt,chat gbt,chat gpt 3,chat gpt login,chat gpt website,chat gpt,chat gtp,chat openai,chat,chatai,chatbot gpt,chatg,chatgpt login,chatgpt,gpt chat,open ai,openai chat,openai chatgpt,openai\"><meta property=\"og:description\" content=\"A conversational AI system that listens, learns, and challenges\"><meta property=\"og:title\" content=\"ChatGPT\"><meta property=\"og:image\" content=\"https://cdn.oaistatic.com/assets/chatgpt-share-og-u7j5uyao.webp\"><meta property=\"og:url\" content=\"https://chatgpt.com\"><link rel=\"manifest\" href=\"/manifest.json\"><link rel=\"preconnect\" href=\"https://cdn.oaistatic.com\"><link rel=\"preconnect\" href=\"https://ab.chatgpt.com\"><meta name=\"robots\" content=\"index, follow\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"apple-itunes-app\" content=\"app-id=6448311069\"><meta name=\"dd-trace-id\" content=\"12984855433575575354\"><meta name=\"dd-trace-time\" content=\"1749751303027\"><link rel=\"icon\" href=\"https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico\" sizes=\"32x32\"><link rel=\"icon\" href=\"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='180'%20height='180'%20fill='none'%3e%3cstyle%3e%20:root%20{%20--primary-fill:%20%23000;%20--secondary-fill:%20%23fff;%20}%20@media%20(prefers-color-scheme:%20dark)%20{%20:root%20{%20--primary-fill:%20%23fff;%20--secondary-fill:%20%23000;%20}%20}%20%3c/style%3e%3cg%20clip-path='url(%23a)'%3e%3crect%20width='180'%20height='180'%20fill='var(--primary-fill)'%20rx...",
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750267785345-0375ce15-79de-4628-8bb7-06c435e9ec45.png",
+      "markdown": "# perplexity.ai\n\nVerifying you are human. This may take a few seconds.",
       "links": [
-        "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-12-06-2025-liveblog-13111740.html?utm_source=chatgpt.com",
-        "https://www.reuters.com/world/india/indias-equity-benchmarks-poised-flat-open-2025-06-12/?utm_source=chatgpt.com",
-        "https://www.business-standard.com/markets/news/stock-market-live-updates-june-12-nse-bse-sensex-today-nifty-us-china-trade-deal-ipo-india-cpi-125061200112_1.html?utm_source=chatgpt.com",
-        "https://m.economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-12-june-2025/liveblog/121790483.cms?utm_source=chatgpt.com",
-        "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-11-03-2025-liveblog-12961461.html?utm_source=chatgpt.com",
-        "https://www.ndtvprofit.com/markets/stock-market-crash-nifty-falls-below-25000-sensex-drops-over-800-points-key-drivers-behind-decline?utm_source=chatgpt.com",
-        "https://timesofindia.indiatimes.com/business/india-business/stock-market-today-nifty50-bse-sensex-june-12-2025-dalal-street-indian-equities-global-markets-us-china-trade-deal/articleshow/121792058.cms?utm_source=chatgpt.com",
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+  {
+    "job_id": "19198390-3d57-420c-9791-5412f147ffa9",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750268003115-3813563c-83d4-4e91-8935-e62da0a65e13.png",
+      "markdown": "",
+      "links": [
+        "https://openai.com/terms",
+        "https://openai.com/privacy",
+        "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+
+  {
+    "job_id": "686653e5-3560-4095-a23b-18d87f19c307",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750268165610-63b5c761-a52a-49b6-9fb4-dd76b92e5a86.png",
+      "markdown": "",
+      "links": [
+        "https://openai.com/terms",
+        "https://openai.com/privacy",
+        "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
         "https://openai.com/policies/cookie-policy/"
       ]
     }
   },
   {
-    "job_id": "f794243d-493b-4c66-8800-2e122815dcb0",
-    "action": "news",
+    "job_id": "9aab9cca-fb43-42e9-92e2-428749f3a3e4",
+    "action": "wikipedia",
     "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751364864-9217262c-e941-4828-9bcf-c2d1a75dd23d.png",
-      "markdown": "# ChatGPT\n\n<!DOCTYPE html><html lang=\"en-US\" data-build=\"prod-68702aa396c7c7505b980ce46c96c0240313cc88\" dir=\"ltr\" class=\"light\" style=\"color-scheme: light;\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\"><title>Indian Stock Market Update</title><meta name=\"description\" content=\"ChatGPT helps you get answers, find inspiration and be more productive. It is free to use and easy to try. Just ask and ChatGPT can help with writing, learning, brainstorming and more.\"><meta name=\"keyword\" content=\"ai chat,ai,chap gpt,chat gbt,chat gpt 3,chat gpt login,chat gpt website,chat gpt,chat gtp,chat openai,chat,chatai,chatbot gpt,chatg,chatgpt login,chatgpt,gpt chat,open ai,openai chat,openai chatgpt,openai\"><meta property=\"og:description\" content=\"A conversational AI system that listens, learns, and challenges\"><meta property=\"og:title\" content=\"ChatGPT\"><meta property=\"og:image\" content=\"https://cdn.oaistatic.com/assets/chatgpt-share-og-u7j5uyao.webp\"><meta property=\"og:url\" content=\"https://chatgpt.com\"><link rel=\"preconnect\" href=\"https://cdn.oaistatic.com\"><link rel=\"preconnect\" href=\"https://ab.chatgpt.com\"><meta name=\"robots\" content=\"index, follow\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"apple-itunes-app\" content=\"app-id=6448311069\"><meta name=\"dd-trace-id\" content=\"9671057203629197470\"><meta name=\"dd-trace-time\" content=\"1749751345151\"><link rel=\"icon\" href=\"https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico\" sizes=\"32x32\"><link rel=\"icon\" href=\"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='180'%20height='180'%20fill='none'%3e%3cstyle%3e%20:root%20{%20--primary-fill:%20%23000;%20--secondary-fill:%20%23fff;%20}%20@media%20(prefers-color-scheme:%20dark)%20{%20:root%20{%20--primary-fill:%20%23fff;%20--secondary-fill:%20%23000;%20}%20}%20%3c/style%3e%3cg%20clip-path='url(%23a)'%3e%3crect%20width='180'%20height='180'%20fill='var(--primary-fill)'%20rx='90'%20...",
-      "links": [
-        "https://www.livemint.com/market/stock-market-news/sensex-nifty-50-fall-1-mid-small-caps-bleed-more-10-key-highlights-from-indian-stock-market-today-11749723562778.html?utm_source=chatgpt.com",
-        "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-12-06-2025-liveblog-13111740.html?utm_source=chatgpt.com",
-        "https://www.reuters.com/world/india/indias-equity-benchmarks-poised-flat-open-2025-06-12/?utm_source=chatgpt.com",
-        "https://www.business-standard.com/markets/news/stock-market-live-updates-june-12-nse-bse-sensex-today-nifty-us-china-trade-deal-ipo-india-cpi-125061200112_1.html?utm_source=chatgpt.com",
-        "https://m.economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-12-june-2025/liveblog/121790483.cms?utm_source=chatgpt.com",
-        "https://www.ndtvprofit.com/markets/stock-market-crash-nifty-falls-below-25000-sensex-drops-over-800-points-key-drivers-behind-decline?utm_source=chatgpt.com"
-      ]
-    }
-  },
-  {
-    "job_id": "6662e263-2d91-4c30-8203-bfed4da3a64c",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751416609-23596ce1-b479-48f4-bb36-a4d004eb96d3.png",
-      "markdown": "# latest news  about indian stock market\n\nThe latest news on the Indian stock market as of June 12, 2025, indicates a significant decline in benchmark indices amid global uncertainties and domestic factors:\n\nThe BSE Sensex fell sharply by 823.16 points (1.00%) to close at 81,691.98, and the NSE Nifty dropped 253.20 points (1.01%) to finish at 24,888.20. This decline was broad-based, with all sectoral indices settling in the red, including Nifty Realty, Energy, Consumer Durables, Oil & Gas, Auto, PSU Bank, FMCG, Metal, and Financial Services, each down over 1%1245.\n\n\nMajor Sensex constituents such as Tata Motors, Titan, Eternal, Power Grid, Tata Steel, L&T, and Mahindra & Mahindra were among the top losers, falling over 2% each, while Bajaj Finserv, Asian Paints, and Tech Mahindra were among the few gainers4.\n\n\nThe market was influenced by the weekly expiry of Nifty 50 futures and options contracts and cautious global sentiment due to limited clarity in the partial U.S.-China trade deal, which leaves room for renewed tariff tensions. Additionally, escalating geopolitical tensions in the Middle East and rising oil prices contributed to risk aversion among investors1234.\n\n\nAnalysts noted that consolidation in domestic markets is evolving into a broad-based trend affecting large-cap stocks, with valuation concerns and rising oil prices fueling investor caution. The U.S. is also considering unilateral tariff hikes on key trading partners, adding to uncertainty24.\n\n\nDespite the sharp fall, technical analysts suggest that the broader trend remains strong and a short-term reversal is possible, though a decisive break below 24,850 on the Nifty could weaken market sentiment further4.\n\n\nInstitutional investors continued their buying streak on the domestic front, while foreign portfolio investors ended their three-day buying spree3.\n\n\nIn the broader market, Nifty Midcap100 and Smallcap100 indices also closed lower by 1.73% and 1.90%, respectively4.\n\n\nNotably, Eris Lifesciences shares surged 11% during the day, marking a rare bright spot in an otherwise weak market4.\n\n• The BSE Sensex fell sharply by 823.16 points (1.00%) to close at 81,691.98, and the NSE Nifty dropped 253.20 points (1.01%) to finish at 24,888.20. This decline was broad-based, with all sectoral indices settling in the red, including Nifty Realty, Energy, Consumer Durables, Oil & Gas, Auto, PSU Bank, FMCG, Metal, and Financial Services, each down over 1%1245.\n\nThe BSE Sensex fell sharply by 823.16 points (1.00%) to close at 81,691.98, and the NSE Nifty dropped 253.20 points (1.01%) to finish at 24,888.20. This decline was broad-based, with all sectoral indices settling in the red, including Nifty Realty, Energy, Consumer Durables, Oil & Gas, Auto, PSU Bank, FMCG, Metal, and Financial Services, each down over 1%1245.\n\n• Major Sensex constituents such as Tata Motors, Titan, Eternal, Power Grid, Tata Steel, L&T, and Mahindra & Mahindra were among the top losers, falling over 2% each, while Bajaj Finserv, Asian Paints, and Tech Mahindra were among the few gainers4.\n\nMajor Sensex constituents such as Tata Motors, Titan, Eternal, Power Grid, Tata Steel, L&T, and Mahindra & Mahindra were among the top losers, falling over 2% each, while Bajaj Finserv, Asian Paints, and Tech Mahindra were among the few gainers4.\n\n• The market was influenced by the weekly expiry of Nifty 50 futures and options contracts and cautious global sentiment due to limited clarity in the partial U.S.-China trade deal, which leaves room for renewed tariff tensions. Additionally, escalating geopolitical tensions in the Middle East and rising oil prices contributed to risk aversion among investors1234.\n\nThe market was influenced by the weekly expiry of Nifty 50 futures and options contracts and cautious global sentiment due to limited clarity in the partial U.S.-China trade deal, which leaves room for renewed tariff tensions. Additionally, escalating geopolitical tensions in the Middle East and rising oil prices contributed to risk aversion among investors1234.\n\n• Analysts noted that consolidation in domestic markets is evolving into a broad-based trend affecting large-cap stocks, with valuation concerns and rising oil prices fueling investor caution. The U.S. is also considering unilateral tariff hikes on key trading partners, adding to uncertainty24.\n\nAnalysts noted that consolidation in domestic markets is evolving into a broad-based trend affecting large-cap stocks, with valuation concerns and rising oil prices fueling investor caution. The U.S. is also considering unilateral tariff hikes on key trading partners, adding to uncertainty24.\n\n• Despite the sharp fall, technical analysts suggest that the broader trend remains strong and a short-term reversal is possible, though a decisive break below 24,850 on the Nifty could weaken market sentiment further4.\n\nDespite the sharp fall, technical analysts suggest that the broader trend remains strong and a short-term reversal is possible, though a decisive break below 24,850 on the Nifty could weaken market sentiment further4.\n\n• Institutional investors continued their buying streak on the domestic front, while foreign portfolio investors ended their three-day buying spree3.\n\nInstitutional investors continued their buying streak on the domestic front, while foreign portfolio investors ended their three-day buying spree3.\n\n• In the broader market, Nifty Midcap100 and Smallcap100 indices also closed lower by 1.73% and 1.90%, respectively4.\n\nIn the broader market, Nifty Midcap100 and Smallcap100 indices also closed lower by 1.73% and 1.90%, respectively4.\n\n• Notably, Eris Lifesciences shares surged 11% during the day, marking a rare bright spot in an otherwise weak market4.\n\nNotably, Eris Lifesciences shares surged 11% during the day, marking a rare bright spot in an otherwise weak market4.\n\nIn summary, the Indian stock market experienced a notable downturn on June 12, 2025, driven by global trade uncertainties, geopolitical tensions, and domestic market dynamics, with cautious investor sentiment prevailing across sectors12345.",
-      "links": [
-        "https://economictimes.com/markets/stocks/live-blog/bse-sensex-today-live-nifty-stock-market-updates-12-june-2025/liveblog/121790483.cms",
-        "https://economictimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/121807827.cms",
-        "https://www.reuters.com/world/india/indias-equity-benchmarks-poised-flat-open-2025-06-12/",
-        "https://www.business-standard.com/markets/news/stock-market-live-updates-june-12-nse-bse-sensex-today-nifty-us-china-trade-deal-ipo-india-cpi-125061200112_1.html",
-        "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-12th-june-2025/article69682736.ece"
-      ]
-    }
-  },
-  {
-    "job_id": "d49a6aac-60fc-42a7-8ad8-14934d218153",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751488386-2c267d0c-0a2a-4bec-8f3c-4fd1f9348b1f.png",
-      "markdown": "# latest news  in india\n\nHere are the latest major news updates from India as of June 12, 2025:\n\nA tragic Air India plane crash near Ahmedabad has resulted in the death toll rising to 290. Among the passengers was former Gujarat Chief Minister Vijay Rupani, who died in the crash. A British passenger miraculously survived the disaster. The flight was headed to London from Ahmedabad, and the crash has caused Boeing shares to fall nearly 8%12356.\n\n\nIndia and Pakistan continue to experience escalating military tensions, with both countries blaming each other for drone strikes and missile attacks. Recent airstrikes and shelling along the Line of Control have caused casualties on both sides. The conflict is rooted in the longstanding Kashmir dispute4.\n\n\nIn Karnataka, the state cabinet has decided to conduct a new caste survey, scrapping the previous one, which is seen as a setback for Chief Minister Siddaramaiah. The government will consult the Karnataka State Backward Classes Commission for this fresh survey56.\n\n\nOther notable news includes the opening of India's first international fishery technology expo in Mumbai, a police crackdown on irregularities in classroom construction in Delhi, and ongoing investigations into a Rs 300 crore land scam in Nashik6.\n\n• A tragic Air India plane crash near Ahmedabad has resulted in the death toll rising to 290. Among the passengers was former Gujarat Chief Minister Vijay Rupani, who died in the crash. A British passenger miraculously survived the disaster. The flight was headed to London from Ahmedabad, and the crash has caused Boeing shares to fall nearly 8%12356.\n\nA tragic Air India plane crash near Ahmedabad has resulted in the death toll rising to 290. Among the passengers was former Gujarat Chief Minister Vijay Rupani, who died in the crash. A British passenger miraculously survived the disaster. The flight was headed to London from Ahmedabad, and the crash has caused Boeing shares to fall nearly 8%12356.\n\n• India and Pakistan continue to experience escalating military tensions, with both countries blaming each other for drone strikes and missile attacks. Recent airstrikes and shelling along the Line of Control have caused casualties on both sides. The conflict is rooted in the longstanding Kashmir dispute4.\n\nIndia and Pakistan continue to experience escalating military tensions, with both countries blaming each other for drone strikes and missile attacks. Recent airstrikes and shelling along the Line of Control have caused casualties on both sides. The conflict is rooted in the longstanding Kashmir dispute4.\n\n• In Karnataka, the state cabinet has decided to conduct a new caste survey, scrapping the previous one, which is seen as a setback for Chief Minister Siddaramaiah. The government will consult the Karnataka State Backward Classes Commission for this fresh survey56.\n\nIn Karnataka, the state cabinet has decided to conduct a new caste survey, scrapping the previous one, which is seen as a setback for Chief Minister Siddaramaiah. The government will consult the Karnataka State Backward Classes Commission for this fresh survey56.\n\n• Other notable news includes the opening of India's first international fishery technology expo in Mumbai, a police crackdown on irregularities in classroom construction in Delhi, and ongoing investigations into a Rs 300 crore land scam in Nashik6.\n\nOther notable news includes the opening of India's first international fishery technology expo in Mumbai, a police crackdown on irregularities in classroom construction in Delhi, and ongoing investigations into a Rs 300 crore land scam in Nashik6.\n\nThese are some of the prominent news developments currently in India.",
-      "links": [
-        "https://www.independent.co.uk/asia/india/air-india-plane-crash-london-ahmedabad-live-updates-b2768784.html",
-        "https://www.ndtv.com/india-news/air-india-ahmedabad-plane-crash-london-ai-171-briton-instagram-post-jamie-meek-fiongal-greenlaw-meek-8650823",
-        "https://www.bbc.com/news/articles/ce3v6drp96zo",
-        "https://www.bbc.com/news/live/cwyneele13qt",
-        "https://www.hindustantimes.com/",
-        "https://indianexpress.com/"
-      ]
-    }
-  },
-  {
-    "job_id": "1353645d-82de-43bf-800e-e2542f546e96",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751539302-a09ed716-e38a-4e9b-881a-1c61a74b2f11.png",
-      "markdown": "# latest news  in india\n\nThe latest major news in India is the tragic crash of an Air India Boeing 787-8 Dreamliner flight AI171, which was en route from Ahmedabad to London Gatwick. The plane crashed shortly after takeoff near Ahmedabad airport in Gujarat, carrying 242 passengers and crew. At least one passenger survived and is hospitalized, while the rest are presumed dead. Among the victims was former Gujarat Chief Minister Vijay Rupani. The crash marks the first fatal incident involving a Boeing 787 Dreamliner. The airline and Tata Group have announced compensation and support for the families of the victims. The cause appears related to the aircraft struggling to gain lift and engine thrust issues, but investigations are ongoing. The incident has deeply shocked the nation, with Prime Minister Modi expressing condolences12369.\n\nOther notable news includes:\n\nFIR filed against 37 individuals in a Rs 300 crore land scam in Nashik.\n\n\nMaharashtra hosting India’s first international fishery tech expo.\n\n\nKarnataka government discarding a caste census report and planning a fresh survey.\n\n\nFormation of a special police force in Karnataka to tackle communal violence.\n\n\nVarious political developments and preparations for upcoming elections.\n\n\nEntertainment news such as Aamir Khan confirming a cameo in Rajinikanth's film \"Coolie\"678.\n\n• FIR filed against 37 individuals in a Rs 300 crore land scam in Nashik.\n\nFIR filed against 37 individuals in a Rs 300 crore land scam in Nashik.\n\n• Maharashtra hosting India’s first international fishery tech expo.\n\nMaharashtra hosting India’s first international fishery tech expo.\n\n• Karnataka government discarding a caste census report and planning a fresh survey.\n\nKarnataka government discarding a caste census report and planning a fresh survey.\n\n• Formation of a special police force in Karnataka to tackle communal violence.\n\nFormation of a special police force in Karnataka to tackle communal violence.\n\n• Various political developments and preparations for upcoming elections.\n\nVarious political developments and preparations for upcoming elections.\n\n• Entertainment news such as Aamir Khan confirming a cameo in Rajinikanth's film \"Coolie\"678.\n\nEntertainment news such as Aamir Khan confirming a cameo in Rajinikanth's film \"Coolie\"678.\n\nThe Air India crash dominates the headlines due to its scale and impact.",
-      "links": [
-        "https://abcnews.go.com/International/air-india-plane-involved-incident-en-route-united/story?id=122762055",
-        "https://www.ndtv.com/india-news/ahmedabad-plane-crash-air-india-crash-ai-171-smiling-selfie-on-ill-fated-plane-a-doctor-couple-and-their-3-young-children-8653035",
-        "https://www.seattletimes.com/nation-world/the-latest-air-india-plane-bound-for-london-crashes-with-242-passengers-onboard/",
-        "https://apnews.com/article/boeing-aviation-aircraft-air-india-crash-f12b20e65dc57ae655a1e0759b58938f",
-        "https://indianexpress.com/",
-        "https://www.indiatoday.in/",
-        "https://www.ndtv.com/",
-        "https://timesofindia.indiatimes.com/"
-      ]
-    }
-  },
-  {
-    "job_id": "2b9cb40d-e285-4a70-9740-a4ccdf4142a2",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751601346-c6bd5a1c-ffb2-4c02-85ae-8205e42659d5.png",
-      "markdown": "# latest news  in india\n\nHere are some of the latest major news updates in India as of June 12, 2025:\n\nThe Monolithisch India IPO saw 24% subscription in the first hour of its opening day, with a grey market premium (GMP) of 25%1.\n\n\nIndia and China are engaged in talks to ensure predictability in the supply chain of rare earth elements, according to the Ministry of External Affairs2.\n\n\nA tragic Air India plane crash occurred in Ahmedabad, with 265 bodies brought to hospitals and one black box recovered. Investigations suggest possible issues with lack of lift and pilot actions in the cockpit. World leaders have offered condolences following the crash347.\n\n\nTensions between India and Pakistan remain high following Operation Sindoor, in which India carried out strikes on terror camps in Pakistan and Pakistan-occupied Kashmir. At least 100 terrorists were reportedly killed. There have been missile and drone attacks along the India-Pakistan border, leading to school closures in Punjab and Jammu & Kashmir, heightened security measures, and blackout orders in some border districts. Indian officials have emphasized measured responses but warned of firm action if further military attacks occur. Diplomatic talks continue, including meetings between India's External Affairs Minister and counterparts from Iran and the EU56.\n\n• The Monolithisch India IPO saw 24% subscription in the first hour of its opening day, with a grey market premium (GMP) of 25%1.\n\nThe Monolithisch India IPO saw 24% subscription in the first hour of its opening day, with a grey market premium (GMP) of 25%1.\n\n• India and China are engaged in talks to ensure predictability in the supply chain of rare earth elements, according to the Ministry of External Affairs2.\n\nIndia and China are engaged in talks to ensure predictability in the supply chain of rare earth elements, according to the Ministry of External Affairs2.\n\n• A tragic Air India plane crash occurred in Ahmedabad, with 265 bodies brought to hospitals and one black box recovered. Investigations suggest possible issues with lack of lift and pilot actions in the cockpit. World leaders have offered condolences following the crash347.\n\nA tragic Air India plane crash occurred in Ahmedabad, with 265 bodies brought to hospitals and one black box recovered. Investigations suggest possible issues with lack of lift and pilot actions in the cockpit. World leaders have offered condolences following the crash347.\n\n• Tensions between India and Pakistan remain high following Operation Sindoor, in which India carried out strikes on terror camps in Pakistan and Pakistan-occupied Kashmir. At least 100 terrorists were reportedly killed. There have been missile and drone attacks along the India-Pakistan border, leading to school closures in Punjab and Jammu & Kashmir, heightened security measures, and blackout orders in some border districts. Indian officials have emphasized measured responses but warned of firm action if further military attacks occur. Diplomatic talks continue, including meetings between India's External Affairs Minister and counterparts from Iran and the EU56.\n\nTensions between India and Pakistan remain high following Operation Sindoor, in which India carried out strikes on terror camps in Pakistan and Pakistan-occupied Kashmir. At least 100 terrorists were reportedly killed. There have been missile and drone attacks along the India-Pakistan border, leading to school closures in Punjab and Jammu & Kashmir, heightened security measures, and blackout orders in some border districts. Indian officials have emphasized measured responses but warned of firm action if further military attacks occur. Diplomatic talks continue, including meetings between India's External Affairs Minister and counterparts from Iran and the EU56.\n\nThese represent some of the key current developments in India across politics, security, and economic sectors.",
-      "links": [
-        "https://www.business-standard.com/markets/news/monolithisch-india-ipo-day-1-update-subscribed-24-in-first-hour-gmp-25-125061200360_1.html",
-        "https://www.business-standard.com/external-affairs-defence-security/news/india-china-talks-on-rare-earths-to-ensure-supply-chain-predictability-125061201092_1.html",
-        "https://www.hindustantimes.com/india-news/ahmedabad-plane-crash-live-updates-air-india-flight-crashes-ahmedabad-airport-death-toll-news-101749717953751.html",
-        "https://www.ndtv.com/india-news/air-india-crash-ahmedabad-ai-171-lack-of-lift-pilots-yanking-yoke-what-may-have-happened-in-planes-cockpit-8649930",
-        "https://www.business-standard.com/india-news/world-leaders-offer-condolences-after-air-india-crash-in-ahmedabad-125061200840_1.html",
-        "https://indianexpress.com/article/india/operation-sindoor-live-updates-india-pakistan-border-airstrike-bahawalpur-9989832/",
-        "https://economictimes.com/news/newsblogs/breaking-news-live-updates-pakistan-spy-probe-jyoti-malhotra-all-party-delegation-ali-khan-mahmudabad-donald-trump-us-india-china-trade-tariffs-india-weather-today-bengaluru-mumbai-rain-cabinet-meeting-world-news-israel-gaza-war-russia-ukraine-21-may-2025/liveblog/121303239.cms"
-      ]
-    }
-  },
-  {
-    "job_id": "b83746ca-f6c1-47c5-b4a5-56bdd8b54564",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751653139-a89e41d0-c4ca-4da9-a5a9-9132ab45f7d0.png",
-      "markdown": "# latest news  in india\n\nHere are some of the latest major news developments in India as of June 2025:\n\nAir India Plane Crash near Ahmedabad\n\nAn Air India flight crashed near Ahmedabad airport recently. The pilots aboard had a combined flying experience of 9,200 hours.\n\n\nInvestigations indicate a lack of lift and possible pilot control issues just before the crash.\n\n\nOne black box has been recovered, and 265 bodies were brought to hospitals following the accident1234.\n\n• An Air India flight crashed near Ahmedabad airport recently. The pilots aboard had a combined flying experience of 9,200 hours.\n\nAn Air India flight crashed near Ahmedabad airport recently. The pilots aboard had a combined flying experience of 9,200 hours.\n\n• Investigations indicate a lack of lift and possible pilot control issues just before the crash.\n\nInvestigations indicate a lack of lift and possible pilot control issues just before the crash.\n\n• One black box has been recovered, and 265 bodies were brought to hospitals following the accident1234.\n\nOne black box has been recovered, and 265 bodies were brought to hospitals following the accident1234.\n\nOperation Sindoor and India-Pakistan Border Tensions\n\nIndia launched Operation Sindoor, targeting terror infrastructure in Pakistan and Pakistan-occupied Kashmir, reportedly killing at least 100 terrorists.\n\n\nThis led to heightened military tensions with Pakistan, including missile and drone attacks on Indian border areas, which were intercepted by Indian defense systems.\n\n\nSeveral Indian states, including Punjab and Jammu & Kashmir, closed schools and universities as a precaution.\n\n\nIndia and Pakistan agreed to a full and immediate ceasefire following international diplomatic interventions, including from the US.\n\n\nIndian officials, including Defence Minister Rajnath Singh and External Affairs Minister S. Jaishankar, emphasized measured responses but warned of firm action if attacked again.\n\n\nSecurity was tightened at airports and border posts, with additional paramilitary deployments in Jammu & Kashmir57.\n\n• India launched Operation Sindoor, targeting terror infrastructure in Pakistan and Pakistan-occupied Kashmir, reportedly killing at least 100 terrorists.\n\nIndia launched Operation Sindoor, targeting terror infrastructure in Pakistan and Pakistan-occupied Kashmir, reportedly killing at least 100 terrorists.\n\n• This led to heightened military tensions with Pakistan, including missile and drone attacks on Indian border areas, which were intercepted by Indian defense systems.\n\nThis led to heightened military tensions with Pakistan, including missile and drone attacks on Indian border areas, which were intercepted by Indian defense systems.\n\n• Several Indian states, including Punjab and Jammu & Kashmir, closed schools and universities as a precaution.\n\nSeveral Indian states, including Punjab and Jammu & Kashmir, closed schools and universities as a precaution.\n\n• India and Pakistan agreed to a full and immediate ceasefire following international diplomatic interventions, including from the US.\n\nIndia and Pakistan agreed to a full and immediate ceasefire following international diplomatic interventions, including from the US.\n\n• Indian officials, including Defence Minister Rajnath Singh and External Affairs Minister S. Jaishankar, emphasized measured responses but warned of firm action if attacked again.\n\nIndian officials, including Defence Minister Rajnath Singh and External Affairs Minister S. Jaishankar, emphasized measured responses but warned of firm action if attacked again.\n\n• Security was tightened at airports and border posts, with additional paramilitary deployments in Jammu & Kashmir57.\n\nSecurity was tightened at airports and border posts, with additional paramilitary deployments in Jammu & Kashmir57.\n\nOther Notable News\n\nPolitical developments continue with discussions around coalition politics and leadership in various states.\n\n\nCultural events like the Madhavpur fair in Gujarat have been scaled up with support from the central government6.\n\n• Political developments continue with discussions around coalition politics and leadership in various states.\n\nPolitical developments continue with discussions around coalition politics and leadership in various states.\n\n• Cultural events like the Madhavpur fair in Gujarat have been scaled up with support from the central government6.\n\nCultural events like the Madhavpur fair in Gujarat have been scaled up with support from the central government6.\n\nFor continuous updates, major Indian news portals like NDTV and Hindustan Times provide live coverage8.",
-      "links": [
-        "https://www.business-standard.com/india-news/air-india-crash-pilots-on-board-had-9200-hours-of-flying-experience-125061201351_1.html",
-        "https://economictimes.com/news/india/air-india-plane-crash-ahmedabad-mayday-call-what-happened-just-moments-before-it-went-down/articleshow/121799493.cms",
-        "https://www.ndtv.com/india-news/air-india-crash-ahmedabad-ai-171-lack-of-lift-pilots-yanking-yoke-what-may-have-happened-in-planes-cockpit-8649930",
-        "https://www.hindustantimes.com/india-news/ahmedabad-plane-crash-live-updates-air-india-flight-crashes-ahmedabad-airport-death-toll-news-101749717953751.html",
-        "https://indianexpress.com/article/india/operation-sindoor-live-updates-india-pakistan-border-airstrike-bahawalpur-9989832/",
-        "https://www.hindustantimes.com/india-news/india-was-ready-for-round-ii-pak-begged-us-for-intervention-after-operation-sindoor-101747540885978.html",
-        "https://indianexpress.com/section/india/",
-        "https://www.ndtv.com/"
-      ]
-    }
-  },
-  {
-    "job_id": "ca02f356-9533-4a55-b675-513c84c14473",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751694836-0dbee805-41d2-4709-8118-a61b22f706f2.png",
-      "markdown": "# latest news  in india\n\nThe latest major news in India is the tragic crash of an Air India Boeing 787-8 Dreamliner (Flight AI171) shortly after takeoff from Ahmedabad airport en route to London Gatwick. The plane was carrying 242 passengers and crew. At least one passenger survived and is hospitalized, but the crash is considered one of the deadliest involving a Boeing 787, with many fatalities including former Gujarat Chief Minister Vijay Rupani. The crash occurred in the Meghaninagar area near Ahmedabad, and videos suggest the aircraft struggled to gain lift before descending and exploding in a fireball about 32 seconds after takeoff. The airline and Tata Group have announced compensation and relief flights for families of the victims. The incident has deeply saddened the nation, with Prime Minister Narendra Modi expressing his condolences and staying in touch with officials12457.\n\nOther ongoing news includes political developments such as preparations for the 2029 Lok Sabha elections with discussions about women's reservation, and various political party strategies and alliances ahead of upcoming polls8. Additionally, there are reports of escalating military tensions between India and Pakistan involving drone strikes and cross-border shelling, resulting in casualties on both sides6.\n\nThese are the key current headlines shaping the news landscape in India today.",
-      "links": [
-        "https://abcnews.go.com/International/air-india-plane-involved-incident-en-route-united/story?id=122762055",
-        "https://www.ndtv.com/india-news/ahmedabad-plane-crash-air-india-crash-ai-171-smiling-selfie-on-ill-fated-plane-a-doctor-couple-and-their-3-young-children-8653035",
-        "https://apnews.com/article/boeing-aviation-aircraft-air-india-crash-f12b20e65dc57ae655a1e0759b58938f",
-        "https://timesofindia.indiatimes.com/india/air-india-plane-crash-cctv-shows-ai171s-fatal-30-second-flight-from-runway-to-tragedy/articleshow/121806996.cms",
-        "https://www.seattletimes.com/nation-world/the-latest-air-india-plane-bound-for-london-crashes-with-242-passengers-onboard/",
-        "https://indianexpress.com/",
-        "https://www.ndtv.com/",
-        "https://www.bbc.com/news/live/cwyneele13qt"
-      ]
-    }
-  },
-  {
-    "job_id": "8004a169-7bef-478a-9f47-68fd1ec5f313",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751820343-19452b47-b608-4121-8998-f0d5d8b9221d.png",
-      "markdown": "# latest news  in india\n\nThe latest major news in India as of June 12, 2025, includes a tragic Air India plane crash in Ahmedabad, resulting in over 200 fatalities. The crash involved a London-bound flight, and police have found one survivor seated at 11A. CCTV footage has captured the fatal 30-second flight from the runway to the crash site. This incident has drawn significant attention nationwide, with prominent figures like former Gujarat Chief Minister Vijay Rupani among the deceased678.\n\nAnother significant recent development was \"Operation Sindoor,\" a military operation conducted by India against terror camps in Pakistan and Pakistan-occupied Kashmir in early May 2025. This operation led to heightened tensions and missile and drone attacks along the India-Pakistan border. India reported neutralizing Pakistan's air defense system in Lahore and killing at least 100 terrorists in the strikes. The Indian government held all-party meetings to brief leaders and build political consensus supporting the operation. Measures such as school closures in Punjab and Jammu & Kashmir, blackout orders in border districts, and increased security at airports and border outposts were implemented amid the escalating conflict. The operation and subsequent tensions prompted international diplomatic activity, including talks between Indian and Iranian foreign ministers and calls from the US for de-escalation12.\n\nFor ongoing updates on these and other news, Indian national news sources like The Indian Express, Hindustan Times, NDTV, Times of India, and India Today provide continuous coverage345678.",
-      "links": [
-        "https://indianexpress.com/article/india/operation-sindoor-live-updates-india-pakistan-border-airstrike-bahawalpur-9989832/",
-        "https://www.hindustantimes.com/india-news/india-was-ready-for-round-ii-pak-begged-us-for-intervention-after-operation-sindoor-101747540885978.html",
-        "https://www.ndtv.com/",
-        "https://timesofindia.indiatimes.com/",
-        "https://www.hindustantimes.com/",
-        "https://www.indiatoday.in/",
-        "https://timesofindia.indiatimes.com/news",
-        "https://indianexpress.com/"
-      ]
-    }
-  },
-  {
-    "job_id": "7d2bc2ae-dac8-4eff-8eb0-2c04a5b8a4c6",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751894191-27007177-039e-4202-8f06-01ec8ae2f764.png",
-      "markdown": "# latest news  in india\n\nThe latest major news in India is the tragic crash of an Air India Boeing 787-8 Dreamliner carrying 242 passengers and crew. The flight AI171 was en route from Ahmedabad to London Gatwick when it crashed shortly after takeoff near Ahmedabad airport in Gujarat. At least one passenger survived and is hospitalized, though initial reports expected no survivors. The crash is notable as it is the first fatal incident involving a Boeing 787 Dreamliner. Rescue and emergency response teams have been mobilized, and relief flights are being arranged for the victims' families. Among the deceased is former Gujarat Chief Minister Vijay Rupani, who was on the flight heading to London12457.\n\nAdditionally, tensions between India and Pakistan remain high, with both countries blaming each other for escalating military confrontations involving missile and drone strikes, resulting in casualties on both sides along the Line of Control in Kashmir6.\n\nOther news highlights include political developments, such as the CPM seeking more seats in alliances for upcoming elections, and various social and governance issues being reported across states78.",
-      "links": [
-        "https://abcnews.go.com/International/air-india-plane-involved-incident-en-route-united/story?id=122762055",
-        "https://www.ndtv.com/india-news/ahmedabad-plane-crash-air-india-crash-ai-171-smiling-selfie-on-ill-fated-plane-a-doctor-couple-and-their-3-young-children-8653035",
-        "https://apnews.com/article/boeing-aviation-aircraft-air-india-crash-f12b20e65dc57ae655a1e0759b58938f",
-        "https://timesofindia.indiatimes.com/india/air-india-plane-crash-cctv-shows-ai171s-fatal-30-second-flight-from-runway-to-tragedy/articleshow/121806996.cms",
-        "https://www.seattletimes.com/nation-world/the-latest-air-india-plane-bound-for-london-crashes-with-242-passengers-onboard/",
-        "https://indianexpress.com/",
-        "https://www.bbc.com/news/live/cwyneele13qt",
-        "https://www.ndtv.com/"
-      ]
-    }
-  },
-  {
-    "job_id": "42e9316f-3c84-4c6c-a5c8-357313abe6c8",
-    "action": "news",
-    "result": {
-      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1749751947922-fb1e02ff-d7fa-41fb-a3b2-ec3d6bd7dd8c.png",
-      "markdown": "# ChatGPT\n\n<!DOCTYPE html><html lang=\"en-US\" data-build=\"prod-0f991cf9d3c708e940045ae851bebdb25d8901dd\" dir=\"ltr\" class=\"light\" style=\"color-scheme: light;\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\"><title>Latest India News Updates</title><meta name=\"description\" content=\"ChatGPT helps you get answers, find inspiration and be more productive. It is free to use and easy to try. Just ask and ChatGPT can help with writing, learning, brainstorming and more.\"><meta name=\"keyword\" content=\"ai chat,ai,chap gpt,chat gbt,chat gpt 3,chat gpt login,chat gpt website,chat gpt,chat gtp,chat openai,chat,chatai,chatbot gpt,chatg,chatgpt login,chatgpt,gpt chat,open ai,openai chat,openai chatgpt,openai\"><meta property=\"og:description\" content=\"A conversational AI system that listens, learns, and challenges\"><meta property=\"og:title\" content=\"ChatGPT\"><meta property=\"og:image\" content=\"https://cdn.oaistatic.com/assets/chatgpt-share-og-u7j5uyao.webp\"><meta property=\"og:url\" content=\"https://chatgpt.com\"><link rel=\"preconnect\" href=\"https://cdn.oaistatic.com\"><link rel=\"preconnect\" href=\"https://ab.chatgpt.com\"><meta name=\"robots\" content=\"index, follow\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"apple-itunes-app\" content=\"app-id=6448311069\"><meta name=\"dd-trace-id\" content=\"16715481870767517173\"><meta name=\"dd-trace-time\" content=\"1749751923937\"><link rel=\"icon\" href=\"https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico\" sizes=\"32x32\"><link rel=\"icon\" href=\"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='180'%20height='180'%20fill='none'%3e%3cstyle%3e%20:root%20{%20--primary-fill:%20%23000;%20--secondary-fill:%20%23fff;%20}%20@media%20(prefers-color-scheme:%20dark)%20{%20:root%20{%20--primary-fill:%20%23fff;%20--secondary-fill:%20%23000;%20}%20}%20%3c/style%3e%3cg%20clip-path='url(%23a)'%3e%3crect%20width='180'%20height='180'%20fill='var(--primary-fill)'%20rx='90'%20...",
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750268276814-37559acb-5b9f-4e86-bd16-7806c516c3c1.png",
+      "markdown": "",
       "links": [
         "https://openai.com/terms",
         "https://openai.com/privacy",
         "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+
+  {
+    "job_id": "004fa1a4-7b4c-4cbc-9e9a-e3d385c2d61b",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750268492978-da79c8ed-5205-41ad-8141-404f11543e64.png",
+      "markdown": "",
+      "links": [
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+  {
+    "job_id": "520933db-594b-49eb-abe0-2ff429383246",
+    "action": "wikipedia",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750268679605-107ce10d-0152-462c-a5fd-02ccd0bc2f0e.png",
+      "markdown": "",
+      "links": [
+        "https://openai.com/terms",
+        "https://openai.com/privacy",
+        "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+  {
+    "job_id": "6040a896-a90a-4aa0-802a-4d23125145fa",
+    "action": "news",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750268835989-94ea5960-77bf-4741-9800-eb1812666dcd.png",
+      "markdown": "# ChatGPT\n\n<!DOCTYPE html><html lang=\"en-US\" data-build=\"prod-e86e7ae56e51defb83ae8866ce8a2b76f57451d6\" dir=\"ltr\" class=\"light\" style=\"color-scheme: light;\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>ChatGPT</title><meta name=\"description\" content=\"ChatGPT helps you get answers, find inspiration and be more productive. It is free to use and easy to try. Just ask and ChatGPT can help with writing, learning, brainstorming and more.\"><meta name=\"keyword\" content=\"ai chat,ai,chap gpt,chat gbt,chat gpt 3,chat gpt login,chat gpt website,chat gpt,chat gtp,chat openai,chat,chatai,chatbot gpt,chatg,chatgpt login,chatgpt,gpt chat,open ai,openai chat,openai chatgpt,openai\"><meta property=\"og:description\" content=\"A conversational AI system that listens, learns, and challenges\"><meta property=\"og:title\" content=\"ChatGPT\"><meta property=\"og:image\" content=\"https://cdn.oaistatic.com/assets/chatgpt-share-og-u7j5uyao.webp\"><meta property=\"og:url\" content=\"https://chatgpt.com\"><link rel=\"manifest\" href=\"/manifest.json\"><link rel=\"preconnect\" href=\"https://cdn.oaistatic.com\"><link rel=\"preconnect\" href=\"https://ab.chatgpt.com\"><meta name=\"robots\" content=\"index, follow\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"apple-itunes-app\" content=\"app-id=6448311069\"><meta name=\"dd-trace-id\" content=\"11209334606178419428\"><meta name=\"dd-trace-time\" content=\"1750268820209\"><link rel=\"icon\" href=\"https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico\" sizes=\"32x32\"><link rel=\"icon\" href=\"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='180'%20height='180'%20fill='none'%3e%3cstyle%3e%20:root%20{%20--primary-fill:%20%23000;%20--secondary-fill:%20%23fff;%20}%20@media%20(prefers-color-scheme:%20dark)%20{%20:root%20{%20--primary-fill:%20%23fff;%20--secondary-fill:%20%23000;%20}%20}%20%3c/style%3e%3cg%20clip-path='url(%23a)'%3e%3crect%20width='180'%20height='180'%20fill='var(--primary-fill)'%20rx...",
+      "links": [
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+  {
+    "job_id": "4dafb1c4-a5fe-450a-b25c-2eed29304445",
+    "action": "news",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750270736712-ee94ea3e-db82-4a85-b08b-e184bc56b5d3.png",
+      "markdown": "Next.js is a popular React framework that enables you to build modern web applications with a focus on performance and ease of development. It provides a set of features that make React development easier, such as:\nKey Features of Next.js:\n\n\nServer-Side Rendering (SSR):\nNext.js allows you to render your React components on the server side before sending the HTML to the browser. This can improve SEO and performance, as the page is fully rendered when it reaches the client.\n\n\nStatic Site Generation (SSG):\nIt can pre-render pages at build time, generating static HTML. This is great for sites where content doesn’t change frequently, as it can be served very quickly from a CDN.\n\n\nAPI Routes:\nNext.js allows you to define backend API routes alongside your frontend code. These API routes can act as serverless functions to handle requests like form submissions or database queries.\n\n\nFile-based Routing:\nThe routing system in Next.js is based on the file structure. This means you don’t need to manually define routes. Just create files and directories in the pages folder, and Next.js automatically creates routes for you.\n\n\nAutomatic Code Splitting:\nNext.js automatically splits your code to improve performance. It only loads the necessary JavaScript for the current page, which results in faster page loads.\n\n\nHot Reloading:\nNext.js comes with a development server that provides fast hot reloading, making it easy to see changes instantly during development.\n\n\nOptimized Images:\nIt includes an Image component that automatically optimizes and serves images in modern formats like WebP, making your website faster.\n\n\nInternationalization (i18n):\nNext.js offers built-in support for multiple languages, making it easier to create multilingual websites.\n\n\nBuilt-in CSS and Sass Support:\nYou can use CSS modules or global styles with Sass without needing additional configuration.\n\n\nWhy Use Next.js?\n\n\nSEO: The SSR and SSG capabilities make it great for SEO, as search engines can crawl fully rendered content easily.\n\n\nPerformance: Features like code splitting, image optimization, and automatic static generation help create faster web apps.\n\n\nDeveloper Experience: The framework provides great tooling, a smooth dev environment, and a strong community.\n\n\nFlexibility: You can mix and match SSR, SSG, and client-side rendering based on the requirements of each page.\n\n\nUse Cases for Next.js:\n\n\nBlogs, static websites (using SSG)\n\n\nE-commerce websites (using SSR and SSG for dynamic pages)\n\n\nDashboards and admin panels (using API routes)\n\n\nLarge-scale web applications (thanks to its flexibility and performance features)\n\n\nOverall, Next.js simplifies many of the complexities involved in building performant, SEO-friendly React applications.",
+      "links": [
+        "https://openai.com/terms",
+        "https://openai.com/privacy",
+        "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+  {
+    "job_id": "5414d488-9ccd-4278-93c2-7ed7801cb3d9",
+    "action": "news",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750270831930-bd11ba7d-d6fe-4b61-b980-e1351b4f72c6.png",
+      "markdown": "I don't have access to real-time data or live news updates. However, I can share some general information on how to stay updated with the latest news and trends on the Indian stock market and what to look for when predicting trends for the next day.\nHow to Stay Updated on Indian Stock Market News:\n\n\nFinancial News Websites:\n\n\nMoneycontrol: Provides stock prices, news, analysis, and live market updates.\n\n\nBusiness Standard: Offers daily updates and market insights.\n\n\nET Markets (Economic Times): Provides stock news, market trends, and expert opinions.\n\n\nLiveMint: Covers stock market news and analysis, economic indicators, and more.\n\n\n\n\nStock Market Apps:\n\n\nZerodha Varsity: A popular app for stock market news and updates in India.\n\n\nUpstox: Another app offering news, analysis, and stock trends.\n\n\nET Markets App: Stay updated with real-time stock prices and financial news.\n\n\n\n\nTV Channels:\n\n\nCNBC TV18: Popular for live market updates, analysis, and interviews with financial experts.\n\n\nNDTV Profit: Another great source for stock market updates and analysis.\n\n\n\n\nSocial Media:\n\n\nFollow market analysts, financial experts, and influencers on platforms like Twitter and LinkedIn for real-time updates.\n\n\nCheck out stock-related forums and communities such as Traderji or ValuePickr for insights and discussions.\n\n\n\n\n\nGeneral Trends to Watch for Tomorrow:\n\n\nGlobal Markets:\n\n\nThe performance of global markets (US, European, and Asian markets) often influences the Indian stock market. If the US market had a significant rally or downturn overnight, it could affect market sentiment in India.\n\n\n\n\nSectoral Performance:\n\n\nWatch for any significant news in sectors like IT, Pharma, Banking, or Auto, as these often drive broader market trends in India.\n\n\n\n\nGovernment Announcements:\n\n\nAny significant government policy or budget announcement can affect stock prices. For example, changes in tax laws, foreign investment policies, or infrastructure development can boost market sentiment.\n\n\n\n\nFII and DII Activity:\n\n\nThe buying and selling activity by Foreign Institutional Investors (FII) and Domestic Institutional Investors (DII) can influence market movements.\n\n\n\n\nEarnings Reports:\n\n\nMajor companies announcing their quarterly earnings can affect their stock price and sometimes have broader m",
+      "links": [
+        "https://openai.com/policies/cookie-policy/"
+      ]
+    }
+  },
+  {
+    "job_id": "7a0f9ca8-5983-4b95-907b-b0aa1512a8c4",
+    "action": "news",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750270932853-4451fcd0-a160-4b92-83ba-689125672236.png",
+      "markdown": "",
+      "links": [
+        "https://www.cloudflare.com/?utm_source=challenge&utm_campaign=m"
+      ]
+    }
+  },
+   {
+    "job_id": "4a65dfdd-3d09-454f-9f11-bb3ce6467fc3",
+    "action": "news",
+    "result": {
+      "screenshot": "https://149536460382-ap-south-1-wiki-scraper-screenshots.s3.ap-south-1.amazonaws.com/screenshots/1750271149772-0b59fb81-06e7-48bc-a0d9-8f94fcc338a6.png",
+      "markdown": "Investor sentiment in India is influenced by a combination of domestic and global factors, reflecting the broader economic and market environment. Here are some of the key factors currently shaping investor sentiment in India:\n1. Macroeconomic Conditions\n\n\nGDP Growth and Economic Outlook: The health of India’s economy plays a significant role. Investors keep an eye on quarterly GDP growth, inflation rates, and forecasts by institutions like the Reserve Bank of India (RBI) and the International Monetary Fund (IMF).\n\n\nInflation and Interest Rates: The RBI’s monetary policy, including any rate hikes or cuts, has a direct impact on the cost of borrowing and consumer spending. Rising inflation can hurt consumer purchasing power and affect corporate earnings.\n\n\nEmployment Data: The unemployment rate, especially in the wake of the pandemic, impacts consumer sentiment and discretionary spending, which in turn affects stock market performance.\n\n\n2. Government Policy and Reforms\n\n\nFiscal Policies: Any changes in tax policy, subsidies, or government spending on infrastructure projects can significantly affect investor sentiment. India’s push for manufacturing (e.g., the \"Make in India\" initiative) or rural economic policies are also key factors.\n\n\nRegulatory Changes: Changes in regulations around sectors like banking, telecom, technology, and pharmaceuticals often shape investor behavior. For example, ease of doing business reforms or changes in the Goods and Services Tax (GST) can boost confidence.\n\n\nElection Results and Political Stability: Investors tend to respond positively to a stable political environment. On the other hand, uncertainty surrounding elections or political upheaval can lead to a more cautious outlook.\n\n\n3. Stock Market Performance\n\n\nBenchmark Indices (Nifty, Sensex): Investor sentiment is heavily driven by movements in these indices. A strong bull market tends to boost investor optimism, while a prolonged bear market can create fear.\n\n\nCorporate Earnings: The performance of large listed companies, particularly in sectors like IT, pharmaceuticals, energy, and banking, influences sentiment. Healthy corporate earnings can lead to increased investor confidence.\n\n\nForeign Portfolio Investments (FPI): FPI inflows are a critical indicator of investor sentiment. Foreign investors closely watch India’s economic and political landscape, and large inflows or outflows can sway market trends.\n\n\n4. Global Economic Trends\n\n\nGlobal Market Conditions: India’s markets are often influenced by the performance of global indices such as the S&P 500 and emerging market indices. Economic slowdowns or crises in major economies (US, China, EU) can cause global risk aversion, which impacts Indian stocks.\n\n\nGeopolitical Risks: Regional tensions (such as those involving Pakistan or China) or global uncertainties (like the Russia-Ukraine w",
+      "links": [
         "https://openai.com/policies/cookie-policy/"
       ]
     }

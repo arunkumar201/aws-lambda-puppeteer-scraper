@@ -3,6 +3,7 @@ import { NewsJob, ScrapeResult } from '../types/job.types';
 import { ScreenshotHelper, CheerioHelper } from './screenshot-helper';
 import { sleep } from '../utils';
 import { MultiPlatformChatBotWaiter } from '../utils/multiPlatformChatBotWaiter';
+import TurndownService from 'turndown';
 
 export class NewsScraper {
   public async scrape(browser: Browser, job: NewsJob): Promise<ScrapeResult> {
@@ -16,7 +17,7 @@ export class NewsScraper {
         maxWaitTime: 10000,
         checkInterval: 150,
       });
-      await waiter.waitForChatBotResponse();
+      const streamResponse = await waiter.waitForChatBotResponse();
 
       const content = await page.content();
       console.log('---- ------- ------ ------ ------ ------ ------ ------ --');
@@ -24,13 +25,21 @@ export class NewsScraper {
       const $ = CheerioHelper.load(content);
 
       const links = CheerioHelper.extractLinks($);
-      const actualMarkdown = CheerioHelper.extractLongFormDescription($);
-      const markdown =
-        actualMarkdown.trim().length > 1
-          ? actualMarkdown
-          : `# ${title}\n\n${content.substring(0, 2000)}...`;
+      const turndownService = new TurndownService();
+      let markdown = turndownService.turndown(content);
+      if (!markdown.trim() && !streamResponse.content) {
+        const actualMarkdown = CheerioHelper.extractLongFormDescription($);
+        markdown =
+          actualMarkdown.trim().length > 1
+            ? actualMarkdown
+            : `# ${title}\n\n${content.substring(0, 2000)}...`;
+      }
 
-      return { screenshot, markdown, links: links.slice(0, 100) };
+      return {
+        screenshot,
+        markdown: streamResponse.content ?? markdown,
+        links: links.slice(0, 100),
+      };
     } catch (error) {
       console.error('Error during scraping:', error);
       throw error;

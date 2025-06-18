@@ -56,6 +56,7 @@ Resources:
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
+          # Public read access for all objects in the bucket. NOTE: Block Public Access must be disabled for this to work.
           - Sid: PublicReadGetObject
             Effect: Allow
             Principal: '*'
@@ -215,12 +216,13 @@ Resources:
           NODE_OPTIONS: "--enable-source-maps"
           AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
       Role: !GetAtt LambdaExecutionRole.Arn
+      # No ReservedConcurrentExecutions set: Lambda will scale up to the account concurrency limit (default 1,000)
       Events:
         ScraperQueueEvent:
           Type: SQS
           Properties:
             Queue: !GetAtt ScraperQueue.Arn
-            BatchSize: 1
+            BatchSize: 1  # Each Lambda processes one message; parallelism is achieved by Lambda scaling
             Enabled: true
 
 Outputs:

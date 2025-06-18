@@ -58,8 +58,8 @@ class SqsPoller {
 
     const command = new ReceiveMessageCommand({
       QueueUrl: this.queueUrl,
-      MaxNumberOfMessages: 1,
-      WaitTimeSeconds: 4,
+      MaxNumberOfMessages: 10,
+      WaitTimeSeconds: 2,
     });
 
     try {

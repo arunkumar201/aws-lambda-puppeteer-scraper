@@ -230,7 +230,7 @@ class MultiPlatformChatBotWaiter {
       let containerFound = false;
       for (const selector of containerSelectors) {
         try {
-          await this.page.waitForSelector(selector, { timeout: 5000 });
+          await this.page.waitForSelector(selector,{ timeout: 15000 });
           containerFound = true;
           this.log(`Message container found with selector: ${selector}`);
           break;
