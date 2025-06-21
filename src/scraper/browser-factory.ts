@@ -4,6 +4,7 @@ import * as PuppeteerCore from 'puppeteer-core';
 import * as proxyChain from 'proxy-chain';
 import UserAgent from 'user-agents';
 import { v4 as uuidv4 } from 'uuid';
+import { fetchProxyFromApi, releaseProxy } from '../utils/proxy-api';
 
 interface ExtendedBrowser {
   closeWithProxy: () => Promise<void>;
@@ -17,15 +18,10 @@ type LaunchOptions = Puppeteer.LaunchOptions;
 import chromium from '@sparticuz/chromium';
 import logger from '../utils/logger';
 
-let browserInstance: PuppeteerBrowser | null = null;
 let isBrowserInitializing = false;
 const BROWSER_TIMEOUT_MS = 30000; // 30 seconds
 const BROWSER_KEEP_ALIVE_MS = 30 * 60 * 1000; // 30 minutes
 let lastUsedTimestamp = Date.now();
-let keepAliveInterval: NodeJS.Timeout | undefined;
-
-// Ensure only one instance of BrowserFactory exists
-let browserFactoryInstance: BrowserFactory | null = null;
 
 export interface BrowserConfig extends LaunchOptions {
   proxy?: string;
@@ -35,29 +31,10 @@ export interface BrowserConfig extends LaunchOptions {
 
 export class BrowserFactory {
   private readonly config: BrowserConfig;
-  private readonly proxyConfig = {
-    host: process.env.PROXY_HOST,
-    port: parseInt(process.env.PROXY_PORT || '80', 10),
-    username: process.env.PROXY_USERNAME,
-    password: process.env.PROXY_PASSWORD,
-    get isAvailable() {
-      return this.host && this.port && this.username && this.password;
-    },
-    get proxyUrl() {
-      return this.isAvailable
-        ? `http://${this.username}:${this.password}@${this.host}:${this.port}`
-        : '';
-    },
-  };
-
   private proxyServer: any = null;
 
   constructor(config: BrowserConfig = {}) {
     this.config = config;
-    if (browserFactoryInstance) {
-      return browserFactoryInstance; // Return existing instance for singleton
-    }
-    browserFactoryInstance = this; // Set this instance as the singleton
   }
 
   private async getLaunchArgs(additionalArgs: string[] = []) {
@@ -89,51 +66,24 @@ export class BrowserFactory {
       '--disable-features=IsolateOrigins,site-per-process',
       `--user-agent=${new UserAgent().toString()}`,
     ];
-
-    // Only set up proxy if all required proxy config is available
-    if (this.proxyConfig.isAvailable) {
+    const proxyToUse = this.config.proxy;
+    if (proxyToUse) {
       try {
-        logger.debug('Proxy config values:', {
-          host: this.proxyConfig.host,
-          port: this.proxyConfig.port,
-          username: this.proxyConfig.username ? '****' : 'N/A',
-          password: this.proxyConfig.password ? '****' : 'N/A',
-          proxyUrl: this.proxyConfig.proxyUrl,
-        });
-
-        logger.info('setupProxyAuth', JSON.stringify(this.proxyConfig));
         this.proxyServer = await proxyChain.anonymizeProxy({
-          url: this.proxyConfig.proxyUrl,
+          url: proxyToUse,
           port: 0,
           ignoreProxyCertificate: true,
         });
-
-        logger.debug('Anonymized proxy server response:', this.proxyServer);
-
-        logger.log({
-          message: `Proxy server created on port: ${new URL(this.proxyServer).port}`,
-          level: 'info',
-        });
-
         args.push(`--proxy-server=${new URL(this.proxyServer).host}`);
       } catch (error) {
-        logger.error('Failed to create proxy server:', {
-          error: error instanceof Error ? error.message : String(error),
-          level: 'error',
-        });
+        logger.error('Failed to create proxy server:', error);
       }
-    } else {
-      logger.log({
-        message: 'Proxy not configured, running without proxy',
-        level: 'info',
-      });
     }
-
     return args;
   }
 
   private async setupProxyAuth(page: any) {
-    if (!this.proxyConfig.isAvailable) {
+    if (!this.proxyServer) {
       return true;
     }
 
@@ -171,24 +121,7 @@ export class BrowserFactory {
   }
 
   public async cleanup(): Promise<void> {
-    if (browserInstance) {
-      try {
-        await browserInstance.close(); // Close the Puppeteer browser instance
-        logger.info('Browser instance closed during cleanup.');
-      } catch (error) {
-        logger.error('Error closing browser instance during cleanup:', {
-          error: error instanceof Error ? error.message : String(error),
-        });
-      } finally {
-        browserInstance = null; // Clear the global browser instance
-        if (keepAliveInterval) {
-          clearInterval(keepAliveInterval);
-          keepAliveInterval = undefined;
-        }
-      }
-    }
     await this.closeProxyServer();
-    browserFactoryInstance = null;
     logger.info('BrowserFactory cleanup complete: browser and proxy closed.');
   }
 
@@ -332,104 +265,37 @@ export class BrowserFactory {
     }
   }
 
-  private async getBrowser(): Promise<PuppeteerBrowser> {
-    if (browserInstance && (await this.isBrowserAlive(browserInstance))) {
-      return browserInstance;
-    }
-
-    return this.createNewBrowser();
-  }
-
-  private async isBrowserAlive(browser: PuppeteerBrowser): Promise<boolean> {
-    try {
-      await browser.version();
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  public async createBrowser(): Promise<PuppeteerBrowser> {
-    if (browserInstance && (await this.isBrowserAlive(browserInstance))) {
-      lastUsedTimestamp = Date.now();
-      startKeepAlive(); // Ensure keep-alive is running
-      return browserInstance;
-    }
-
-    while (isBrowserInitializing) {
-      await new Promise(resolve => setTimeout(resolve, 100));
-      if (browserInstance) {
-        return browserInstance;
+  public async createBrowser(maxRetries = 3): Promise<PuppeteerBrowser> {
+    let attempt = 0;
+    let lastError: any = null;
+    while (attempt < maxRetries) {
+      try {
+        const proxyDetails = await fetchProxyFromApi();
+        this.config.proxy = proxyDetails.data.proxies[0].url;
+        const browser = await this.createNewBrowser();
+        lastUsedTimestamp = Date.now();
+        logger.info(`Browser created with proxy: ${this.config.proxy}`);
+        await releaseProxy(proxyDetails.data.proxies[0].id);
+        return browser;
+      } catch (error) {
+        lastError = error;
+        attempt++;
+        logger.error(`Proxy failed, retrying with new proxy (attempt ${attempt}): ${error}`);
       }
     }
-
-    // Create new browser instance
-    isBrowserInitializing = true;
     try {
-      browserInstance = await this.createNewBrowser();
+      logger.warn('All proxy attempts failed. Launching browser without proxy as fallback.');
+      this.config.proxy = undefined;
+      const browser = await this.createNewBrowser();
       lastUsedTimestamp = Date.now();
-      startKeepAlive(); // Start keep-alive when creating new browser
-      return browserInstance;
-    } catch (error) {
-      console.error('Failed to create browser:', error);
-      throw error;
-    } finally {
-      isBrowserInitializing = false;
+      return browser;
+    } catch (finalError) {
+      throw lastError || finalError || new Error('Failed to create browser with or without proxy');
     }
   }
 
   // Method to explicitly close the browser when needed (now handled by cleanup)
   public async closeBrowser(): Promise<void> {
-    if (browserFactoryInstance) {
-      await browserFactoryInstance.cleanup();
-    }
-  }
-
-  // The global function to be called on process exit/SIGINT
-  // This will call the cleanup method on the singleton BrowserFactory instance.
-  public static async globalShutdownHandler(): Promise<void> {
-    if (browserFactoryInstance) {
-      logger.info('Initiating global BrowserFactory shutdown.');
-      await browserFactoryInstance.cleanup();
-    } else {
-      logger.info('No BrowserFactory instance to globally shut down.');
-    }
+    await this.cleanup();
   }
 }
-
-function startKeepAlive() {
-  if (keepAliveInterval) return;
-
-  keepAliveInterval = setInterval(async () => {
-    if (browserInstance) {
-      try {
-        const page = await browserInstance!.newPage();
-        await page.goto('about:blank');
-        await page.close();
-        lastUsedTimestamp = Date.now();
-      } catch (error) {
-        console.error('Keep-alive check failed, will create new browser on next request:', error);
-        browserInstance = null;
-        if (keepAliveInterval) {
-          clearInterval(keepAliveInterval);
-          keepAliveInterval = undefined;
-        }
-      }
-    }
-  }, 60000); // Check every minute
-}
-
-// Remove the redundant keepProcessAliveInterval
-// clearInterval(keepProcessAliveInterval);
-
-// Update process event listeners to call the static shutdown handler
-process.on('SIGINT', async () => {
-  logger.info('SIGINT received. Triggering global shutdown handler.');
-  await BrowserFactory.globalShutdownHandler();
-  // process.exit(0); // Exit cleanly
-});
-
-process.on('exit', async code => {
-  logger.info(`Process exiting with code: ${code}. Triggering global shutdown handler.`);
-  await BrowserFactory.globalShutdownHandler();
-});
